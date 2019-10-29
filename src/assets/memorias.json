@@ -1,0 +1,15 @@
+[{
+    "id" : 1,
+    "lugar": "London", 
+    "fecha":"2019-01-16"
+  }, {
+    "id": 2,
+    "lugar":"Paris",
+    "fecha":"2020-01-05"
+  },
+  {
+    "id": 3,
+    "lugar":"Bogota",
+    "fecha":"2020-08-05"
+  }
+  ]
