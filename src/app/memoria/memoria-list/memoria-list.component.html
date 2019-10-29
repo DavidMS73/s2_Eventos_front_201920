@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+  
+  <div class="container-fluid">
+    <div class="col-md-2">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Memoria Place</th>
+            <th>Memoria Date</th>
+            <th>Memoria Evento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let e of memorias">
+                      <td>{{e.lugar}}</td>
+                      <td>{{e.fecha}}</td>        
+          </tr>
+        </tbody>
+      </table>
+    </div>
