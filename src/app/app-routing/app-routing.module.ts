@@ -38,10 +38,6 @@ const routes: Routes = [
         path: 'home',
         component: AuthLoginComponent
     },
-    {
-        path: '**',
-        redirectTo: 'home',
-    },
     {path: 'memorias',
     children: [
         {
@@ -51,7 +47,12 @@ const routes: Routes = [
         {
             path: 'id',
             component: MemoriaDetailComponent
-        }*/]}
+        }*/]},
+    {
+        path: '**',
+        redirectTo: 'home',
+    }
+    
 ];
 
 @NgModule({
