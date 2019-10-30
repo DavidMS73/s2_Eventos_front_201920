@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Recordando a Mozart",
+        "categoria": "Musical",
+        "descripcion": "Evento para las personas que tengan interés en la música clásica",
+        "fechaInicio": "21-01-2019",
+        "fechaFin": "21-01-2019",
+        "detallesAdicionales": "",
+        "entradasRestantes": 100,
+        "esPago": true,
+        "valor": 200
+    },
+    {
+        "id": 2,
+        "nombre": "Bailes contemporáneos",
+        "categoria": "Danza",
+        "descripcion": "Evento para las personas que tengan interés en la danza contemporánea",
+        "fechaInicio": "22-01-2019",
+        "fechaFin": "22-01-2019",
+        "detallesAdicionales": "",
+        "entradasRestantes": 200,
+        "esPago": false,
+        "valor": 0
+    },
+    {
+        "id": 3,
+        "nombre": "CineMagnífico",
+        "categoria": "Cine",
+        "descripcion": "Evento para las personas que tengan interés en cine",
+        "fechaInicio": "23-01-2019",
+        "fechaFin": "23-01-2019",
+        "detallesAdicionales": "",
+        "entradasRestantes": 800,
+        "esPago": true,
+        "valor": 10
+    },
+    {
+        "id": 4,
+        "nombre": "Feria Laboral",
+        "categoria": "Feria",
+        "descripcion": "Evento para las personas que tengan interés en oportunidades de trabajo",
+        "fechaInicio": "24-01-2019",
+        "fechaFin": "24-01-2019",
+        "detallesAdicionales": "",
+        "entradasRestantes": 500,
+        "esPago": false,
+        "valor": 0
+    }
+]

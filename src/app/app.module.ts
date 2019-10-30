@@ -1,25 +1,20 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ToastrModule} from 'ngx-toastr';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
-import {NgxPermissionsModule} from 'ngx-permissions';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
+import { NgxPermissionsModule } from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 
-import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app-routing/app-routing.module';
-import {AuthModule} from './auth/auth.module';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AuthModule } from './auth/auth.module';
 import { MemoriaModule } from '../memoria/memoria.module';
-
-
-
-
-
-
+import { EventoModule } from './evento/evento.module';
 
 @NgModule({
     declarations: [
@@ -41,7 +36,8 @@ import { MemoriaModule } from '../memoria/memoria.module';
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        MemoriaModule
+        MemoriaModule,
+        EventoModule
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -52,4 +48,4 @@ import { MemoriaModule } from '../memoria/memoria.module';
         }
     ]
 })
-export class AppModule {}
+export class AppModule { }
