@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { MemoriaModule } from '../memoria/memoria.module';
 import { EventoModule } from './evento/evento.module';
+import {UsuarioModule} from './usuario/usuario.module';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { EventoModule } from './evento/evento.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MemoriaModule,
-        EventoModule
+        EventoModule, 
+        UsuarioModule
     ],
     bootstrap: [AppComponent],
     providers: [
