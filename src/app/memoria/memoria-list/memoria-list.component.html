@@ -9,13 +9,14 @@
           <tr>
             <th>Memoria Place</th>
             <th>Memoria Date</th>
-            <th>Memoria Evento</th>
+            <th>Memoria Event</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor = "let e of memorias">
                       <td>{{e.lugar}}</td>
-                      <td>{{e.fecha}}</td>        
+                      <td>{{e.fecha}}</td>
+                      <td><p>testestestestestestestes</p>{{e.evento.nombre}}</td>        
           </tr>
         </tbody>
       </table>
