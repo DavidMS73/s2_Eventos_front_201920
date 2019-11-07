@@ -8,8 +8,9 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let e of eventos">
-          <td style="cursor: pointer;">
-						<a class="figure-caption" [routerLink] ="['/eventos', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+					<td style="cursor: pointer;">
+						<a class="figure-caption"
+							[routerLink]="['/eventos', { outlets: { 'detail': [e.id] } }]">{{e.nombre}}</a>
 					</td>
 				</tr>
 			</tbody>
