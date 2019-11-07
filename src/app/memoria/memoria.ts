@@ -1,4 +1,4 @@
-import {Evento} from '../evento/evento';
+import { Evento } from '../evento/evento'
 
 export class Memoria {
     id: number;
@@ -10,7 +10,7 @@ export class Memoria {
      /**
       * Atributo que modela el evento de la memoria
       */
-     evento: Evento;
+    evento: Evento;
  
      /**
       * Atributo que modela la fecha de la memoria

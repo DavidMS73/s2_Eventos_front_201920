@@ -9,6 +9,6 @@ import { MedioDePagoListComponent } from './medioDePago-list/medioDePago-list.co
   ],
   declarations: [MedioDePagoListComponent],
   providers: [MedioDePagoService],
-  export: [MedioDePagoListComponent]
+  exports: [MedioDePagoListComponent]
 })
 export class MedioDePagoModule { }

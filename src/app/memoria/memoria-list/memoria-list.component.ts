@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MemoriaService } from '../../../../src/memoria/memoria.service'
-import { Memoria } from '../../../../src/memoria/memoria'
+import { MemoriaService } from '../memoria.service'
+import { Memoria } from '../memoria'
 
 @Component({
   selector: 'app-memoria-list',

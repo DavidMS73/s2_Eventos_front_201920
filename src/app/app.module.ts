@@ -13,7 +13,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { MemoriaModule } from '../memoria/memoria.module';
+import { MemoriaModule } from '../app/memoria/memoria.module';
 import { EventoModule } from './evento/evento.module';
 import {UsuarioModule} from './usuario/usuario.module';
 

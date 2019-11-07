@@ -12,9 +12,9 @@
     "lugar":"Paris",
     "fecha":"2020-01-05",
     "evento":{
-        "id": 1,
-        "nombre": "Recordando a Mozart",
-        "descripcion": "Evento para recordar la música clásica"
+        "id": 7,
+        "nombre": "Jazz concierto",
+        "descripcion": "Jazz"
       }
   },
   {
@@ -22,9 +22,9 @@
     "lugar":"Bogota",
     "fecha":"2020-08-05",
     "evento":{
-        "id": 1,
-        "nombre": "Recordando a Mozart",
-        "descripcion": "Evento para recordar la música clásica"
+        "id": 8,
+        "nombre": "Futbol",
+        "descripcion": "..."
       }
   }
   ]
