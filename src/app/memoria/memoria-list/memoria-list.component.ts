@@ -22,6 +22,15 @@ export class MemoriaListComponent implements OnInit {
     this.memoriaService.getMemorias().subscribe(memorias => this.memorias = memorias);
     }
 
+  createMemoria(): void{
+    this.memoriaService.createMemoria().subscribe(
+      (val) => { alert("POST call successful value returned in body" + val); },
+      response => {alert("POST call in error" + response);},
+      () => {alert("The POST observable is now completed.");}
+      );
+    this.getMemorias(); 
+  }
+
   /**
   * Constructor for the component
   * @param memoriaService The author's services provider
