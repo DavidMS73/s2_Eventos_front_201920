@@ -1,0 +1,22 @@
+[
+    {
+      "id":1,
+      "numeroRecibo":"123456"
+    },
+    {
+      "id":2,
+      "numeroRecibo":"111111"
+    },
+    {
+      "id":3,
+      "numeroRecibo":"111112"
+    },
+    {
+      "id":4,
+      "numeroRecibo":"111113"
+    },
+    {
+      "id":5,
+      "numeroRecibo":"111114"
+    }
+  ]

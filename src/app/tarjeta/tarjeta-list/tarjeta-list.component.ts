@@ -1,7 +1,6 @@
 
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
-import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
-import {ToastrService} from 'ngx-toastr';
+import {Component, OnInit} from '@angular/core';
+
 
 import { Tarjeta } from '../tarjeta';
 import { TarjetaService } from '../tarjeta.service';
