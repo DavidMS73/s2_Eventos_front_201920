@@ -8,13 +8,12 @@ const API_URL = '../../assets/';
 const tarjetas = '/tarjetas.json';
 
 @Injectable()
-export class TarjetaService{
+export class TarjetaService {
 
-    constructor(private http: HttpClient){ }
+    constructor(private http: HttpClient) { }
 
-    getTarjetas(): Observable<Tarjeta[]>{
+    getTarjetas(): Observable<Tarjeta[]> {
         return this.http.get<Tarjeta[]>(API_URL + tarjetas);
     }
-
 
 }

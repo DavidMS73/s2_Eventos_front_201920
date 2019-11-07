@@ -1,5 +1,5 @@
 
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 import { Tarjeta } from '../tarjeta';
@@ -8,19 +8,19 @@ import { TarjetaService } from '../tarjeta.service';
 @Component({
     selector: 'app-tarjeta',
     templateUrl: './tarjeta-list.html',
-    styleUrls: [ './tarjeta-list.css' ]
+    styleUrls: ['./tarjeta-list.css']
 })
 
 export class TarjetaListComponent implements OnInit {
 
-    constructor (
+    constructor(
         private tarjetaService: TarjetaService
-    ){  }
+    ) { }
 
     tarjetas: Tarjeta[];
 
-    getTarjetas(): void{
-        this.tarjetaService.getTarjetas().subscribe( tarjetas => {
+    getTarjetas(): void {
+        this.tarjetaService.getTarjetas().subscribe(tarjetas => {
             this.tarjetas = tarjetas;
         })
     }

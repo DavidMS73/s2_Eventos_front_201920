@@ -8,11 +8,10 @@ const mediosDepago = "medioDePago.json";
 
 @Injectable()
 export class MedioDePagoService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getMediosDePago(): Observable<MedioDePago[]> {
-    return this.http.get<MedioDePago[]>(API_URL +mediosDepago);
+    return this.http.get<MedioDePago[]>(API_URL + mediosDepago);
   }
 
-  
 }

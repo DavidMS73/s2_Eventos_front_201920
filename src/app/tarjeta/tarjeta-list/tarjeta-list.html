@@ -1,21 +1,20 @@
-
-    <div>
-        <table class="table table-striped"> 
-            <thead>
-                <tr>
-                    <th>cvv</th>
-                    <th>Número</th>
-                    <th>Tipo de tarjeta</th>
-                    <th>Expiración</th>
-                </tr>
-            </thead>
-            <tbody >
-                <tr *ngFor = "let t of tarjetas">
-                    <td>{{t.cvv}}</td>
-                    <td>{{t.numeroTarjeta}}</td>
-                    <td>{{t.tipoTarjeta}}</td>
-                    <td>{{t.expiracion}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>cvv</th>
+                <th>Número</th>
+                <th>Tipo de tarjeta</th>
+                <th>Expiración</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tarjetas">
+                <td>{{t.cvv}}</td>
+                <td>{{t.numeroTarjeta}}</td>
+                <td>{{t.tipoTarjeta}}</td>
+                <td>{{t.expiracion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

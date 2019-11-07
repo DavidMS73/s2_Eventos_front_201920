@@ -16,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { MemoriaModule } from '../app/memoria/memoria.module';
 import { MedioDePagoModule } from '../app/medioDePago/medioDePago.module';
 import { EventoModule } from './evento/evento.module';
-import {UsuarioModule} from './usuario/usuario.module';
+import { UsuarioModule } from './usuario/usuario.module';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
 
 @NgModule({
@@ -41,7 +41,7 @@ import { TarjetaModule } from './tarjeta/tarjeta.module';
         NgbModule,
         MemoriaModule,
         MedioDePagoModule,
-        EventoModule, 
+        EventoModule,
         UsuarioModule,
         TarjetaModule
     ],

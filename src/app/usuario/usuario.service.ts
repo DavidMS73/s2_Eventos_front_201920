@@ -9,7 +9,7 @@ const usuarios = "usuarios.json";
 
 @Injectable()
 export class UsuarioService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(API_URL + usuarios);

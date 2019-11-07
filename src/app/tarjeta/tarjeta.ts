@@ -1,4 +1,4 @@
-export class Tarjeta{
+export class Tarjeta {
     private id: number;
 
     private tipoTarjeta: string;
@@ -9,5 +9,4 @@ export class Tarjeta{
 
     private cvv: number;
 
-    
 }

@@ -7,7 +7,7 @@ import { TarjetaService } from './tarjeta.service';
 @NgModule({
     imports: [CommonModule, AppRoutingModule],
     declarations: [TarjetaListComponent],
-    exports:[TarjetaListComponent],
-    providers:[TarjetaService]
+    exports: [TarjetaListComponent],
+    providers: [TarjetaService]
 })
-export class TarjetaModule{ }
+export class TarjetaModule { }

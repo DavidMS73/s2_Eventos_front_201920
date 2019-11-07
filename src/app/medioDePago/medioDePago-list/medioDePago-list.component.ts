@@ -7,7 +7,7 @@ import { MedioDePagoService } from "../medioDePago.service";
   templateUrl: "./medioDePago-list.component.html"
 })
 export class MedioDePagoListComponent implements OnInit {
-  constructor(private medioDePagoService: MedioDePagoService) {}
+  constructor(private medioDePagoService: MedioDePagoService) { }
 
   medios: MedioDePago[];
 

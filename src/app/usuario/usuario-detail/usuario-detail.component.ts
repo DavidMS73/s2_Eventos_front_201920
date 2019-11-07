@@ -13,8 +13,7 @@ export class UsuarioDetailComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private route: ActivatedRoute
-  )
-  {}
+  ) { }
 
   usuarioDetail: UsuarioDetail;
 
@@ -23,7 +22,7 @@ export class UsuarioDetailComponent implements OnInit {
   loader: any;
 
   getUsuarioDetail(): void {
-    this.usuarioService.getUsuarioDetail(this.usuario_id).subscribe(o => {this.usuarioDetail = o;});
+    this.usuarioService.getUsuarioDetail(this.usuario_id).subscribe(o => { this.usuarioDetail = o; });
   }
 
   onLoad(params) {

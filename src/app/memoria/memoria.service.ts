@@ -15,26 +15,26 @@ export class MemoriaService {
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
     */
-    constructor(private http: HttpClient) { }    
-  
-    getMemorias() : Observable<Memoria[]> {
-        return this.http.get<Memoria[]>(API_URL + memorias);
-    }
+  constructor(private http: HttpClient) { }
 
-    createMemoria(): Observable<Memoria> {
-      return this.http.post<Memoria>(API_URL + memorias,
-        {
-          "lugar":"Bogota",
-          "fecha":"2020-09-10T05:00:00Z[UTC]",
-          "evento":{
-            "id": 8,
-            "nombre": "Futbol",
-            "descripcion": "..."
-          }
-          
+  getMemorias(): Observable<Memoria[]> {
+    return this.http.get<Memoria[]>(API_URL + memorias);
+  }
+
+  createMemoria(): Observable<Memoria> {
+    return this.http.post<Memoria>(API_URL + memorias,
+      {
+        "lugar": "Bogota",
+        "fecha": "2020-09-10T05:00:00Z[UTC]",
+        "evento": {
+          "id": 8,
+          "nombre": "Futbol",
+          "descripcion": "..."
         }
-      );
-    } 
+
+      }
+    );
+  }
 
 
 }

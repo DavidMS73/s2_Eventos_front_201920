@@ -1,5 +1,5 @@
-import {Usuario} from "./usuario";
+import { Usuario } from "./usuario";
 
-export class UsuarioDetail extends Usuario{
+export class UsuarioDetail extends Usuario {
   description: string;
 }
