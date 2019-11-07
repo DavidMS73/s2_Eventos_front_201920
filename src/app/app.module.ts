@@ -18,6 +18,8 @@ import { MedioDePagoModule } from '../app/medioDePago/medioDePago.module';
 import { EventoModule } from './evento/evento.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
+import { LugarModule } from './lugar/lugar.module';
+import { MultimediaModule } from './multimedia/multimedia.module';
 
 @NgModule({
     declarations: [
@@ -43,7 +45,9 @@ import { TarjetaModule } from './tarjeta/tarjeta.module';
         MedioDePagoModule,
         EventoModule,
         UsuarioModule,
-        TarjetaModule
+        TarjetaModule,
+        LugarModule,
+        MultimediaModule
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "url": "https://uniandes.edu.co/sites/default/files/Bingofopre-n8.jpg", 
+        "nombre":"Auditorio Mario Laserna",
+        "tipo":"imagen"
+    }, 
+    {
+        "id" : 2,
+        "url": "https://i2.wp.com/acustical.com/wp-content/uploads/2017/04/Universidad-de-Los-Andes-01.jpg?resize=940%2C460&ssl=1", 
+        "nombre":"Auditorio Lleras",
+        "tipo":"imagen"
+    }, 
+    {
+        "id" : 3,
+        "url": "https://uniandes.edu.co/sites/default/files/construcciondevalores_universiadadelosandes.jpg", 
+        "nombre":"Plazoleta Lleras",
+        "tipo":"imagen"
+    } 
+]

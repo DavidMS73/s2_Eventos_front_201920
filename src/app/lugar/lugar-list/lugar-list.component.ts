@@ -13,7 +13,7 @@ export class LugarListComponent implements OnInit {
   /**
   * The list of lugares which belong to the app
   */
-  memorias: Lugar[];
+  lugares: Lugar[];
 
   /**
   * Asks the service to update the list of lugares

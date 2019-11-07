@@ -34,7 +34,6 @@ export class LugarService
         "salon": "auditorio",
         "nombre" : "auditorio Mario Laserna"
         }
-
-      }
     );
   }
+}
