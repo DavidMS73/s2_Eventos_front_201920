@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Multimedia url</th>
+            <th>Multimedia name</th>
+            <th>Multimediatype</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of multimedias">
+            <td>{{e.url}}</td>
+            <td>{{e.nombre}}</td>
+            <td>{{e.tipo}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+      <input type="button" value="Add Multimedia" (click)="createMultimedia()">
+    </div>
+  </div>
