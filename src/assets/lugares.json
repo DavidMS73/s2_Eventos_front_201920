@@ -1,0 +1,29 @@
+[
+    {
+        "id" : 1,
+        "capacidadAsistentes": "100", 
+        "ubicacionGeografica":"Bogota",
+        "bloque":"ML",
+        "piso":"primer piso",
+        "salon":"auditorio",
+        "nombre":"Auditorio Mario Laserna" 
+    }, 
+    {
+        "id" : 2,
+        "capacidadAsistentes": "100", 
+        "ubicacionGeografica":"Bogota",
+        "bloque":"LL",
+        "piso":"sotano",
+        "salon":"auditorio",
+        "nombre":"Auditorio Lleras" 
+    },
+    {
+        "id" : 3,
+        "capacidadAsistentes": "50", 
+        "ubicacionGeografica":"Bogota",
+        "bloque":"LL",
+        "piso":"tercer piso",
+        "salon":"plazoleta",
+        "nombre":"Plazoleta Lleras" 
+    }
+]
