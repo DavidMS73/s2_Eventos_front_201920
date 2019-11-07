@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "tipoTarjeta": "Crédito",
+        "numeroTarjeta": "123456789012345",
+        "expiracion": "02/2020",
+        "cvv": 123
+    }
+]

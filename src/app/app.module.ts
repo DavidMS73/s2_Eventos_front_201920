@@ -16,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { MemoriaModule } from '../app/memoria/memoria.module';
 import { EventoModule } from './evento/evento.module';
 import {UsuarioModule} from './usuario/usuario.module';
+import { TarjetaModule } from './tarjeta/tarjeta.module';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import {UsuarioModule} from './usuario/usuario.module';
         NgbModule,
         MemoriaModule,
         EventoModule, 
-        UsuarioModule
+        UsuarioModule,
+        TarjetaModule
     ],
     bootstrap: [AppComponent],
     providers: [
