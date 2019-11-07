@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Medio de Pago Id</th>
+            <th>MNumero de Recibo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of medios">
+            <td>{{m.id}}</td>
+            <td>{{m.numeroRecibo}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="button" value="Add memoria" (click)="createMemoria()">
+    </div>
+  </div>

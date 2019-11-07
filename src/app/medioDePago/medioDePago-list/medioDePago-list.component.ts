@@ -4,7 +4,7 @@ import { MedioDePagoService } from "../medioDePago.service";
 
 @Component({
   selector: "list-medioDePago",
-  templateUrl: "./evento-list.component.html"
+  templateUrl: "./medioDePago-list.component.html"
 })
 export class MedioDePagoListComponent implements OnInit {
   constructor(private medioDePagoService: MedioDePagoService) {}

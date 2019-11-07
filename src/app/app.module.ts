@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { MemoriaModule } from '../app/memoria/memoria.module';
+import { MedioDePagoModule } from '../app/medioDePago/medioDePago.module';
 import { EventoModule } from './evento/evento.module';
 import {UsuarioModule} from './usuario/usuario.module';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
@@ -39,6 +40,7 @@ import { TarjetaModule } from './tarjeta/tarjeta.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MemoriaModule,
+        MedioDePagoModule,
         EventoModule, 
         UsuarioModule,
         TarjetaModule

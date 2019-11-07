@@ -6,6 +6,7 @@ import { NgxPermissionsGuard } from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { MemoriaListComponent } from '../memoria/memoria-list/memoria-list.component';
+import { MedioDePagoListComponent} from '../medioDePago/medioDePago-list/medioDePago-list.component';
 
 import { EventoDetailComponent } from '../evento/evento-detail/evento-detail.component';
 import { EventoListComponent } from '../evento/evento-list/evento-list.component';
@@ -52,6 +53,16 @@ const routes: Routes = [
             path: 'id',
             component: MemoriaDetailComponent
         }*/]
+    },
+    {
+        path: 'medioDePago',
+        children:[
+            {
+                path: 'list',
+                component: MedioDePagoListComponent
+            }
+        ]
+
     },
     {
         path: 'eventos',
