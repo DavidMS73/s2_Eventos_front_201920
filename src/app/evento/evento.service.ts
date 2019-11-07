@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
+import {Observable} from 'rxjs';
 import { HttpClient } from "@angular/common/http";
+
 import { Evento } from "./evento";
 import { EventoDetail } from "./evento-detail";
-import { Observable } from "rxjs";
 
-const API_URL = "../../assets/";
-const eventos = "eventos.json";
+import {environment} from '../../environments/environment';
+const API_URL = environment.apiURL;
+const eventos = '/eventos';
 
 @Injectable()
 export class EventoService {
@@ -16,7 +18,6 @@ export class EventoService {
   }
 
   getEventoDetail(eventoId): Observable<EventoDetail> {
-    return this.http.get<EventoDetail>(API_URL + "evento-" + eventoId + ".json"
-    );
+    return this.http.get<EventoDetail>(API_URL + eventos + '/' + eventoId);
   }
 }
