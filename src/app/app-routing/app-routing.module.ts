@@ -11,6 +11,8 @@ import { MedioDePagoListComponent } from '../medioDePago/medioDePago-list/medioD
 import { EventoDetailComponent } from '../evento/evento-detail/evento-detail.component';
 import { EventoListComponent } from '../evento/evento-list/evento-list.component';
 
+import { UsuarioListComponent } from '../usuario/usuario-list/usuario-list.component';
+import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 const routes: Routes = [
 
     {
@@ -60,6 +62,26 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MedioDePagoListComponent
+            }
+        ]
+
+    },
+    {
+        path: 'usuarios',
+        children: [
+            {
+                path: 'list',
+                component: UsuarioListComponent
+            }
+        ]
+
+    },
+    {
+        path: 'patrocinios',
+        children: [
+            {
+                path: 'list',
+                component: PatrocinioListComponent
             }
         ]
 

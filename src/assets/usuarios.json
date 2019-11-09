@@ -1,0 +1,41 @@
+[
+    {
+      "id":1,
+      "nombre":"Juan Carlos",
+      "correo":"jc@uniandes.edu.co",
+      "contrasena":"holasoyjuancarlos",
+      "asiste":"true",
+      "codigoQR":"1011100101010011",
+      "empresa": "Microsoft"
+  
+    },
+    {
+      "id":2,
+      "nombre":"Juan Diego",
+      "correo":"jd@uniandes.edu.co",
+      "contrasena":"holasoyjuandiego",
+      "asiste":"true",
+      "codigoQR":"1011101111010011",
+      "empresa": "Apple"
+  
+    },
+    {
+      "id":3,
+      "nombre":"Juan Camilo",
+      "correo":"jcamilo@uniandes.edu.co",
+      "contrasena":"holasoyjuancamilo",
+      "asiste":"true",
+      "codigoQR":"1111100001010011",
+      "empresa": "Facebook"
+    },
+    {
+      "id":4,
+      "nombre":"Juan Fernando",
+      "correo":"jf@uniandes.edu.co",
+      "contrasena":"holasoyjuanfernando",
+      "asiste":"true",
+      "codigoQR":"1011100100011011",
+      "empresa": "Universidad de los Andes"
+  
+    }
+  ]

@@ -20,7 +20,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
 import { LugarModule } from './lugar/lugar.module';
 import { MultimediaModule } from './multimedia/multimedia.module';
-
+import {PatrocinioModule} from './patrocinio/patrocinio.module';
 @NgModule({
     declarations: [
         AppComponent
@@ -47,7 +47,8 @@ import { MultimediaModule } from './multimedia/multimedia.module';
         UsuarioModule,
         TarjetaModule,
         LugarModule,
-        MultimediaModule
+        MultimediaModule,
+        PatrocinioModule
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -1,0 +1,22 @@
+[
+    {
+      "id":1,
+      "empresa":"Marvel",
+      "tipo": "Premium"
+    },
+    {
+      "id":2,
+      "empresa":"DC Comics",
+      "tipo": "Gold"
+    },
+    {
+      "id":3,
+      "empresa":"Subway",
+      "tipo": "Silver"
+    },
+    {
+      "id":4,
+      "empresa":"Doña Blanca",
+      "tipo": "Copper"
+    }
+  ]
