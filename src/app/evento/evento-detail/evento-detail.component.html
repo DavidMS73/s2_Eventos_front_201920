@@ -4,3 +4,60 @@
         <p class="p-3">{{eventoDetail.descripcion}}</p>
     </div>
 </div>
+<div class="container-fluid">
+        <div class="row">
+            <h1>{{eventoDetail.nombre}}
+            </h1>
+        </div>
+        <div class="row">
+    
+            <img src={{eventoDetail.imagen}} style="width:500px;height:250px;">
+        </div>
+            <div class="row">
+                <p>Descripcion: &nbsp;{{eventoDetail.descripcion}}
+                </p>
+            </div>
+            <div class="row">
+                <p>Categoria: &nbsp;{{eventoDetail.categoria}}
+                </p>
+            </div>
+            <div class="row">
+                <p>Fecha inicial: &nbsp;{{eventoDetail.fechaInicio}}
+                </p>
+            </div>
+            <div class="row">
+                <p>Fecha fin: &nbsp;{{eventoDetail.fechaFin}}
+                </p>
+            </div>
+            <div class="row">
+                    <p>Detalles adicionales: &nbsp;{{eventoDetail.detallesAdicionales}}
+                    </p>
+                </div>
+              <div class="row">
+                    <p>Valor: &nbsp;{{eventoDetail.valor}}&nbsp; pesos
+                    </p>
+                </div>
+          <div class="row">
+                    <p>Actividades del evento:</p>
+          </div>
+                <div class="row">
+    <table class="table">
+                <tr>
+                <th>#</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                            <th>Hora inicio</th>
+                            <th>Hora fin</th>
+                </tr>
+                    <tr *ngFor="let actividad of eventoDetail.actividades">
+                  <td>{{actividad.id}} </td>
+                                <td>{{actividad.nombre}} </td>
+                  <td>{{actividad.fecha}} </td>
+                  <td>{{actividad.horaInicio}} </td>
+                  <td>{{actividad.horaFin}} </td>
+    
+                </tr>
+              </table>
+                </div>
+          
+        </div>

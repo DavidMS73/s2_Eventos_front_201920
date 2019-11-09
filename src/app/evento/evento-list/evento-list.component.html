@@ -1,19 +1,13 @@
+
 <div class="container-fluid">
-	<div class="col-md-2">
-		<table class="table table-striped">
-			<thead class="thead-dark">
-				<tr>
-					<th>Nombre Evento</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr *ngFor="let e of eventos">
-					<td style="cursor: pointer;">
-						<a class="figure-caption"
-							[routerLink]="['/eventos', { outlets: { 'detail': [e.id] } }]">{{e.nombre}}</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+		<div class="col">
+			<div class="card" style="width: 17rem;" *ngFor="let evento of eventos">
+				<div class="card-body">
+					<h5 class="card-title">{{evento.nombre}}</h5>
+					<h6>{{evento.fechaInicio}}-{{evento.fechaFin}}</h6>
+					<h6>Entradas restantes: {{evento.entradasRestantes}}</h6>
+					<h6>Valor: {{evento.valor}} pesos</h6>
+				<a class="btn btn-primary" [routerLink] ="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver evento</a>
+				</div>
+			</div>
+		</div>

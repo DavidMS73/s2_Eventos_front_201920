@@ -1,5 +1,31 @@
 {
     "id": 3,
-    "nombre": "CineMagnífico",
-    "descripcion": "¿Y por qué no vamos al cine? Encontrarás las mejores películas"
-}
+    "nombre": "Feria Laboral",
+    "categoria": "Laboral",
+    "descripcion": "Evento presentacion de empleos",
+    "fechaInicio": "10/02/2019",
+    "fechaFin": "30/02/2019",
+    "detallesAdicionales": "Abierto al publico",
+    "entradasRestantes": 10,
+    "esPago": "false",
+    "valor": 0,
+    "imagen":"https://static4.abc.es/media/cultura/2016/10/05/libros-k2cF--620x349@abc.jpg",
+    "actividades": [
+      {
+        "id": 1,
+        "nombre":"Lanzamiento de la feria",
+        "descripcion": "Palabras del rector",
+        "horaInicio": "10:00 am",
+        "horaFin": "5:00 pm",
+        "fecha": "1/02/2019"
+      },
+      {
+        "id": 2,
+        "nombre":"Clausura de la feria",
+        "descripcion": "Palabras de los estudiantes",
+        "horaInicio": "2:00 pm",
+        "horaFin": "3:00 pm",
+        "fecha": "20/02/2019"
+      }
+    ]
+  }
