@@ -15,9 +15,68 @@
       "id": 1,
       "nombre":"Bingo",
       "descripcion": "Bingo en el ML",
-      "horaInicio": "9:00 am",
+      "horaInicio": "5465486:00 am",
       "horaFin": "11:00 am",
       "fecha": "3/08/2019"
+    }
+  ],
+  "patrocinios": [
+    {
+      "id": 1,
+      "empresa":"BBC",
+      "tipo": "Gold"
+    },
+    {
+      "id": 2,
+      "empresa":"Wireless",
+      "tipo": "Silver"
+    }
+  ],
+  "invitadosespeciales":[
+    {
+      "id": 1,
+      "nombre": "Juan Camilo Gomez",
+      "correo": "jc@hotmail.com",
+      "contrasena": "123456789",
+      "estudios": "Ingenieria de Sistemas",
+      "codigoQR": "12345678",
+      "empresa": "Apple"
+  },
+  {
+    "id": 2,
+    "nombre": "Juan Jose Rivera",
+    "correo": "jj@hotmail.com",
+    "contrasena": "1234564339",
+    "estudios": "Ingenieria Mecanica",
+    "codigoQR": "16875032",
+    "empresa": "Google"
+},
+{
+  "id": 3,
+  "nombre": "Juan Diego Villegas",
+  "correo": "jd@hotmail.com",
+  "contrasena": "124896023",
+  "estudios": "Ingenieria Ambiental",
+  "codigoQR": "89215630",
+  "empresa": "Greepeace"
+}
+  ],
+  "memorias":[
+    {
+      "id" : 1,
+      "lugar": "Bloque C", 
+      "fecha":"2019-01-16"
+    }, {
+      "id": 2,
+      "lugar":"Auditorio ML",
+      "fecha":"2019-01-05"
+
+    },
+    {
+      "id": 3,
+      "lugar":"Primer piso del Lleras",
+      "fecha":"2019-01-17"
+
     }
   ]
 }
