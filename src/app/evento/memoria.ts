@@ -1,5 +1,9 @@
 import { Evento } from '../evento/evento'
 
+/**
+* Esta clase representa una memoria en LesIndestructibles. 
+* Contiene toda la informacion relevante de una memoria.
+*/
 export class Memoria {
   id: number;
   /**

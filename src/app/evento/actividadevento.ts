@@ -1,9 +1,31 @@
+/**
+* Esta clase representa una actividad de un evento en LesIndestructibles. 
+* Contiene toda la informacion relevante de una actividad en un evento.
+*/
 export class Actividadevento {
-  
-    nombre:string;
-    descripcion:string;
-    horaInicio: string;
-    horaFin:string;
-    fecha:string;
-  
-  }
+
+  /**
+   * Nombre de la actividad
+   */
+  nombre: string;
+
+  /**
+   * Descripción de la actividad
+   */
+  descripcion: string;
+
+  /**
+   * Hora de inicio de la actividad
+   */
+  horaInicio: string;
+
+  /**
+   * Hora de fin de la actividad
+   */
+  horaFin: string;
+
+  /**
+   * Fecha de la actividad
+   */
+  fecha: string;
+}

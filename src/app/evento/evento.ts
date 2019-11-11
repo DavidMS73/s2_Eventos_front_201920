@@ -1,3 +1,7 @@
+/**
+* Esta clase representa un evento en LesIndestructibles. 
+* Contiene toda la informacion relevante de un evento.
+*/
 export class Evento {
     /**
      * Id del evento
@@ -39,7 +43,7 @@ export class Evento {
      */
     entradasRestantes: number;
 
-    
+
     /**
      * Valor del evento
      */

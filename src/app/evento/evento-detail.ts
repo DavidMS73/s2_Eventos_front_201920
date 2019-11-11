@@ -3,9 +3,30 @@ import { Actividadevento } from './actividadevento';
 import { Patrocinio } from './patrocinio';
 import { Usuario } from './usuario';
 import {Memoria} from './memoria';
+
+/**
+* Representa un EventoDetail de LesIndestructibles. 
+* Contiene toda la información relevante del evento.
+*/
 export class EventoDetail extends Evento {
-  actividades: Actividadevento[];
+
+  /**
+   * Actividades del evento
+   */
+  actividadesEvento: Actividadevento[];
+
+  /**
+   * Patrocinios del evento
+   */
   patrocinios: Patrocinio[];
-  invitadosespeciales: Usuario[];
+
+  /**
+   * Usuarios del evento
+   */
+  usuarios: Usuario[];
+
+  /**
+   * Memorias del evento
+   */
   memorias:Memoria[];
 }

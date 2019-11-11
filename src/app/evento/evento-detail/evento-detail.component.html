@@ -4,10 +4,6 @@
         </h1>
     </div>
     <div class="row">
-
-        <img src={{eventoDetail.imagen}} style="width:500px;height:250px;">
-    </div>
-    <div class="row">
         <b>Descripcion:</b> &nbsp;<p>{{eventoDetail.descripcion}}
         </p>
     </div>
@@ -16,19 +12,23 @@
         </p>
     </div>
     <div class="row">
-        <b>Fecha inicial:</b><p> &nbsp;{{eventoDetail.fechaInicio}}
+        <b>Fecha inicial:</b>
+        <p> &nbsp;{{eventoDetail.fechaInicio}}
         </p>
     </div>
     <div class="row">
-        <b>Fecha fin:</b><p> &nbsp;{{eventoDetail.fechaFin}}
+        <b>Fecha fin:</b>
+        <p> &nbsp;{{eventoDetail.fechaFin}}
         </p>
     </div>
     <div class="row">
-        <b>Detalles adicionales:</b><p> &nbsp;{{eventoDetail.detallesAdicionales}}
+        <b>Detalles adicionales:</b>
+        <p> &nbsp;{{eventoDetail.detallesAdicionales}}
         </p>
     </div>
     <div class="row">
-        <b>Valor: </b><p>&nbsp;{{eventoDetail.valor}}&nbsp; pesos
+        <b>Valor: </b>
+        <p>&nbsp;{{eventoDetail.valor}}&nbsp; pesos
         </p>
     </div>
     <div class="row">
@@ -37,14 +37,12 @@
     <div class="row">
         <table class="table">
             <tr>
-                <th>#</th>
                 <th>Nombre</th>
                 <th>Fecha</th>
                 <th>Hora inicio</th>
                 <th>Hora fin</th>
             </tr>
-            <tr *ngFor="let actividad of eventoDetail.actividades">
-                <td>{{actividad.id}} </td>
+            <tr *ngFor="let actividad of eventoDetail.actividadesEvento">
                 <td>{{actividad.nombre}} </td>
                 <td>{{actividad.fecha}} </td>
                 <td>{{actividad.horaInicio}} </td>
@@ -53,34 +51,34 @@
             </tr>
         </table>
         <div class="row">
-                <h3>Invitados especiales del evento:</h3>
-            </div>
+            <h3>Usuarios del evento:</h3>
+        </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="card" style="width: 17rem;" *ngFor="let invitado of eventoDetail.invitadosespeciales">
+                <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
                     <div class="card-body">
-                        <h5 class="card-title">{{invitado.correo}}</h5>
-                        <h6>{{invitado.empresa}}</h6>
+                        <h5 class="card-title">{{usuario.correo}}</h5>
+                        <h6>{{usuario.nombre}}</h6>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-                <h3>Memorias del evento:</h3>
-            </div>
+            <h3>Memorias del evento:</h3>
+        </div>
         <div class="container-fluid">
-                <div class="row">
-                    <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
-                        <div class="card-body">
-                            <h5 class="card-title">{{memoria.lugar}}</h5>
-                            <h6>{{memoria.fecha}}</h6>
-                        </div>
+            <div class="row">
+                <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
+                    <div class="card-body">
+                        <h5 class="card-title">{{memoria.lugar}}</h5>
+                        <h6>{{memoria.fecha}}</h6>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                    <h3>Patrocinadores del evento:</h3>
-                </div>
+        </div>
+        <div class="row">
+            <h3>Patrocinadores del evento:</h3>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">

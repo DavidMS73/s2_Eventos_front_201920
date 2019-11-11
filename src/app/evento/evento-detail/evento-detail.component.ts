@@ -15,11 +15,11 @@ import { EventoDetail } from "../evento-detail";
 export class EventoDetailComponent implements OnInit {
 
   /**
-    * The constructor of the component
-    * @param eventoService The evento service which communicates with the API
-    * @param route The route which helps to retrieves the id of the evento to be shown
-    * @param router The router which is needed to know when the component needs to reload
-    * @param toastrService The toastr to show messages to the user
+    * Constructor del componente
+    * @param eventoService Servicio de evento que se comunica con el API
+    * @param route La ruta que ayuda a recuperar el id del evento para ser mostrado
+    * @param router El enrutador que se necesario para saber cuando el componente necesita recargarse
+    * @param toastrService Toastr para mostrar mensajes al usuario
     */
   constructor(
     private eventoService: EventoService,
@@ -29,8 +29,9 @@ export class EventoDetailComponent implements OnInit {
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService
   ) {
-    //This is added so we can refresh the view when one of the eventos in
-    //the "Otros eventos" list is clicked
+
+    // Es añadido, luego podemos refrescar la vista cuando uno de los eventos en la lista 
+    // "Otros eventos" es oprimido
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -39,23 +40,23 @@ export class EventoDetailComponent implements OnInit {
   }
 
   /**
-    * The evento's id retrieved from the path
+    * Id del evento recuperado del path
     */
   evento_id: number;
 
   /**
-    * The evento whose details are shown
+    * El evento cuyos detalles son mostraddos
     */
   eventoDetail: EventoDetail;
 
   /**
-    * The other eventos shown in the sidebar
+    * Los otros eventos mostrados en la barra lateral
     */
   otros_eventos: Evento[];
 
   /**
-    * The suscription which helps to know when a new evento
-    * needs to be loaded
+    * La suscripción que ayuda a saber cuándo un nuevo evento
+    * necesita ser cargado
     */
   navigationSubscription;
 
@@ -105,9 +106,8 @@ export class EventoDetailComponent implements OnInit {
   }
 
   /**
-    * The method which initilizes the component
-    * We need to initialize the book and its editorial so that
-    * they are never considered undefined
+    * Método que inicializa el componente
+    * Inicializamos el evento para nunca ser considerados indefinidos
     */
   ngOnInit() {
     this.evento_id = +this.route.snapshot.paramMap.get('id');
@@ -117,8 +117,8 @@ export class EventoDetailComponent implements OnInit {
   }
 
   /**
-    * This method helps to refresh the view when we need to load another book into it
-    * when one of the other books in the list is clicked
+    * Este método ayuda a refrescar la vista cuando se necesita cargar otro evento en esta
+    * cuando uno de los otros eventos de la lista es seleccionado
     */
   ngOnDestroy() {
     if (this.navigationSubscription) {
