@@ -10,6 +10,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { EventoListComponent } from './evento-list/evento-list.component';
 import { EventoService } from './evento.service';
 import { EventoDetailComponent } from './evento-detail/evento-detail.component';
+import { EventoCreateComponent } from './evento-create/evento-create.component';
 
 @NgModule({
   imports: [BrowserModule,
@@ -20,7 +21,7 @@ import { EventoDetailComponent } from './evento-detail/evento-detail.component';
     NgbModule,
     ReactiveFormsModule,
     NgxPermissionsModule],
-  declarations: [EventoListComponent, EventoDetailComponent],
+  declarations: [EventoListComponent, EventoDetailComponent, EventoCreateComponent],
   exports: [EventoListComponent],
   providers: [EventoService]
 })

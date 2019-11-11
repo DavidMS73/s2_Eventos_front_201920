@@ -22,12 +22,12 @@ export class Evento {
     /**
      * Fecha de inicio del evento
      */
-    fechaInicio: Date;
+    fechaInicio: any;
 
     /**
      * Fecha de fin del evento
      */
-    fechaFin: Date;
+    fechaFin: any;
 
     /**
      * Detalles adicionales del evento
@@ -39,11 +39,7 @@ export class Evento {
      */
     entradasRestantes: number;
 
-    /**
-     * El evento es pago o no
-     */
-    esPago: boolean;
-
+    
     /**
      * Valor del evento
      */

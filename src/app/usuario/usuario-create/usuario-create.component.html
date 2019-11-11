@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Create an author</h2>
+        <br>
+        <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="usuarioName"><b>Nombre</b></label>
+                <input type="text" name="usuarioName" class="form-control" id="usuarioName" [(ngModel)]="usuario.nombre"
+                    #authorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The author's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioEmpresa"><b>Description</b></label>
+                <input name="usuarioEmpresa" class="form-control" id="usuarioEmpresa" [(ngModel)]="usuario.empresa"
+                    #usuarioEmpresa="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioEmpresa.invalid }"
+                    required>
+                <div class="invalid-feedback">
+                    <div>The author's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioCorreo"><b>Description</b></label>
+                <input name="usuarioCorreo" maxlength=255 class="form-control" id="usuarioCorreo" [(ngModel)]="usuario.correo"
+                    #usuarioCorreo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioCorreo.invalid }"
+                    required>
+                <div class="invalid-feedback">
+                    <div>The author's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioContrasena"><b>Image</b></label>
+                <input type="text" name="usuarioContrasena" class="form-control" id="usuarioContrasena" [(ngModel)]="usuario.contrasena"
+                    #usuarioContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioContrasena.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The author's image is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary"(click)="cancelCreation()">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

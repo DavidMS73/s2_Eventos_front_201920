@@ -33,7 +33,7 @@ export class EventoService {
    * @param evento The new evento
    * @returns The book with its new id if it was created, false if it wasn't
    */
-  createBook(evento): Observable<EventoDetail> {
+  createEvento(evento): Observable<EventoDetail> {
     return this.http.post<EventoDetail>(API_URL + eventos, evento);
   }
 

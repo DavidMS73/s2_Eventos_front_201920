@@ -10,8 +10,10 @@ import { MedioDePagoListComponent } from '../medioDePago/medioDePago-list/medioD
 
 import { EventoDetailComponent } from '../evento/evento-detail/evento-detail.component';
 import { EventoListComponent } from '../evento/evento-list/evento-list.component';
+import { EventoCreateComponent } from "../evento/evento-create/evento-create.component";
 
 import { UsuarioListComponent } from '../usuario/usuario-list/usuario-list.component';
+import { UsuariosCreateComponent } from "../usuario/usuario-create/usuario-create.component";
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 const routes: Routes = [
 
@@ -67,12 +69,10 @@ const routes: Routes = [
 
     },
     {
-        path: 'usuarios',
+        path: "usuarios",
         children: [
-            {
-                path: 'list',
-                component: UsuarioListComponent
-            }
+            { path: "list", component: UsuarioListComponent },
+            { path: "add", component: UsuariosCreateComponent }
         ]
 
     },
@@ -87,17 +87,17 @@ const routes: Routes = [
 
     },
     {
-        path: 'eventos',
-        children: [{
-            path: 'list',
-            component: EventoListComponent
-        },
-        {
-            path: ':id',
-            component: EventoDetailComponent,
-            outlet: 'detail'
-        }
-        ]
+        path: "eventos",
+    children: [
+      { path: "list", component: EventoListComponent },
+      { path: "add", component: EventoCreateComponent },
+
+      {
+        path: ":id",
+        component: EventoDetailComponent,
+        outlet: "detail"
+      }
+    ]
     },
     {
         path: '**',
