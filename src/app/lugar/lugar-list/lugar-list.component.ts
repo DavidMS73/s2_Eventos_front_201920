@@ -19,7 +19,10 @@ export class LugarListComponent implements OnInit {
   * Asks the service to update the list of lugares
   */
   getLugares(): void {
-    this.lugarService.getLugares;
+    this.lugarService.getLugares()
+      .subscribe(lugares => {
+        this.lugares = lugares;
+      });
   }
 
   createLugar(): void {

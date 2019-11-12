@@ -13,7 +13,7 @@ import { Evento } from "../evento";
   providers: [DatePipe]
 })
 export class EventoCreateComponent implements OnInit {
-  
+
   /**
    * Constructor del componente
    * @param dp DatePipe para seleccionar la fecha
@@ -26,12 +26,17 @@ export class EventoCreateComponent implements OnInit {
     private eventoService: EventoService,
     private toastrService: ToastrService,
     private router: Router
-  ) {}
+  ) { }
 
   /**
    * El nuevo evento
    */
   evento: Evento;
+
+  /**
+    * Lista de categorías en LesIndestructibles
+    */
+  categorias: String[] = ["Académico", "Cultural"];
 
   /**
     * El output el cual indica al componente padre que el
@@ -63,30 +68,27 @@ export class EventoCreateComponent implements OnInit {
     * Crea un nuevo evento
     */
   createEvento(): Evento {
-    // let fechaInicio: Date = new Date(
-    //   this.evento.fechaInicio.year,
-    //   this.evento.fechaInicio.getMonth - 1,
-    //   this.evento.fechaInicio.getDay
-    // );
-    // let fechaFin: Date = new Date(
-    //   this.evento.fechaFin.year,
-    //   this.evento.fechaFin.month - 1,
-    //   this.evento.fechaFin.day
-    // );
+    let fechaInicio: Date = new Date(
+      this.evento.fechaInicio.year,
+      this.evento.fechaInicio.month-1,
+      this.evento.fechaInicio.day
+    );
+    let fechaFin: Date = new Date(
+      this.evento.fechaFin.year,
+      this.evento.fechaFin.month-1,
+      this.evento.fechaFin.day
+    );
+    
+    this.evento.fechaInicio = this.dp.transform(fechaInicio, "yyyy-MM-ddT00:00:00-05:00");
+    this.evento.fechaFin = this.dp.transform(fechaFin, "yyyy-MM-ddT00:00:00-05:00");
 
-    // this.evento.fechaInicio = this.dp.transform(fechaInicio, "yyyy-MM-dd");
-    // this.evento.fechaFin = this.dp.transform(fechaFin, "yyyy-MM-dd");
-
-    this.evento.fechaFin = "2020-09-10T05:00:00Z[UTC]";
-    this.evento.fechaInicio = "2020-09-06T05:00:00Z[UTC]";
-    console.log(this.evento.categoria);
-    console.log(this.evento.descripcion );
+    console.log(this.evento);
 
     this.eventoService.createEvento(this.evento).subscribe(
       (evento) => {
         this.evento = evento;
         this.create.emit();
-        this.toastrService.success("El evento fue created", "Evento creation");
+        this.toastrService.success("El evento fue creado", "Creación evento");
       },
       err => {
         this.toastrService.error(err, "Error");

@@ -2,84 +2,86 @@
 	<div class="row">
 		<div class="col-12">
 			<br>
-			<h2 class="text-center">Agrega un nuevo evento:</h2>
+			<h2 class="text-center">Agrega un nuevo evento</h2>
 			<br>
 			<form name="evento" (ngSubmit)="f.form.valid && createEvento()" #f="ngForm" novalidate>
 				<div class="form-group">
 					<label for="eventoNombre"><b>Nombre</b></label>
-					<input type="text" name="eventoNombre" class="form-control" id="eventoNombre" [(ngModel)]="evento.nombre"
-                        #eventoNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoNombre.invalid }" required>
+					<input type="text" name="eventoNombre" class="form-control" id="eventoNombre"
+						[(ngModel)]="evento.nombre" #eventoNombre="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoNombre.invalid }" required>
 					<div class="invalid-feedback">
-						<div>El nombre del evento hace falta</div>
+						<div>Debe definir el nombre del evento</div>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="eventoFechaInicio"><b>Fecha inicio: </b></label>
 					<div [ngClass]="{ 'is-invalid': f.submitted && eventoFechaInicio.invalid }">
-						<input class="form-control" id="eventoFechaInicio" name="eventoFechaInicio" [(ngModel)]="evento.fechaInicio"
-                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #eventoFechaInicio="ngModel" [ngClass]="{'is-invalid': (eventoFechaInicio.untouched || eventoFechaInicio.invalid) }"
-                            required>
+						<input class="form-control" id="eventoFechaInicio" name="eventoFechaInicio"
+							[(ngModel)]="evento.fechaInicio" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+							#eventoFechaInicio="ngModel"
+							[ngClass]="{'is-invalid': (eventoFechaInicio.untouched || eventoFechaInicio.invalid) }"
+							required>
 						<div class="invalid-feedback">
-							<div>La fecha de inicio del evento hace falta</div>
+							<div>Debe definir una fecha de inicio</div>
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="eventoFechaFin"><b>Fecha fin: </b></label>
 					<div [ngClass]="{ 'is-invalid': f.submitted && eventoFechaFin.invalid }">
-						<input class="form-control" id="eventoFechaFin" name="eventoFechaFin" [(ngModel)]="evento.fechaFin"
-                            ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()" #eventoFechaFin="ngModel" [ngClass]="{'is-invalid': (eventoFechaFin.untouched || eventoFechaFin.invalid) }"
-                            required>
+						<input class="form-control" id="eventoFechaFin" name="eventoFechaFin"
+							[(ngModel)]="evento.fechaFin" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
+							#eventoFechaFin="ngModel"
+							[ngClass]="{'is-invalid': (eventoFechaFin.untouched || eventoFechaFin.invalid) }" required>
 						<div class="invalid-feedback">
-							<div>La fecha final del evento hace falta</div>
+							<div>Debe definir una fecha de fin</div>
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="eventoDescripcion"><b>Descripción del evento</b></label>
-					<textarea name="eventoDescripcion" class="form-control" id="eventoDescripcion" [(ngModel)]="evento.descripcion"
-                        #eventoDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoDescripcion.invalid }"
-                        required></textarea>
+					<textarea name="eventoDescripcion" class="form-control" id="eventoDescripcion"
+						[(ngModel)]="evento.descripcion" #eventoDescripcion="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoDescripcion.invalid }" required></textarea>
 					<div class="invalid-feedback">
-						<div>La descripción del evento hace falta</div>
+						<div>Debe definir la descripción del evento</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="eventoDetalles"><b>Detalles adicionales</b></label>
-					<input type="text" name="eventoDetalles" class="form-control" id="eventoDetalles" [(ngModel)]="evento.detallesAdicionales"
-                        #eventoDetalles="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoDetalles.invalid }" required>
-					<div class="invalid-feedback">
-						<div>Los detalles adicionales del evento hacen falta</div>
-					</div>
+					<input type="text" name="eventoDetalles" class="form-control" id="eventoDetalles"
+						[(ngModel)]="evento.detallesAdicionales" #eventoDetalles="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoDetalles.invalid }">
 				</div>
 				<div class="form-group">
 					<label for="eventoEntradasRestantes"><b>Cantidad de entradas al evento</b></label>
-					<input type="text" name="eventoEntradasRestantes" class="form-control" id="eventoEntradasRestantes" [(ngModel)]="evento.entradasRestantes"
-                        #eventoEntradasRestantes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoEntradasRestantes.invalid }" required>
+					<input type="text" name="eventoEntradasRestantes" class="form-control" id="eventoEntradasRestantes"
+						[(ngModel)]="evento.entradasRestantes" #eventoEntradasRestantes="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoEntradasRestantes.invalid }" required>
 					<div class="invalid-feedback">
-						<div>Las entradas restantes del evento hacen falta</div>
+						<div>Debe definir la capacidad del evento</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="eventoValor"><b>Valor del evento</b></label>
-					<input type="text" name="eventoValor" class="form-control" id="eventoValor" [(ngModel)]="evento.valor"
-                        #eventoValor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoValor.invalid }" required>
+					<input type="text" name="eventoValor" class="form-control" id="eventoValor"
+						[(ngModel)]="evento.valor" #eventoValor="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoValor.invalid }" required>
 					<div class="invalid-feedback">
-						<div>El valor del evento hace falta</div>
+						<div>Debe definir el precio de la entrada para el evento</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="eventoCategoria"><b>Categoria del evento</b></label>
-					<select class="custom-select" name="eventoCategoria" id="eventoCategoria" [(ngModel)]="evento.categoria"
-                        #eventoCategoria="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoCategoria.invalid }"
-                        required>
-                        <option [value]="academico" > Academico</option>
-                                                <option [value]="cultural" > Cultural</option>
-
-                    </select>
+					<select class="custom-select" name="eventoCategoria" id="eventoCategoria"
+						[(ngModel)]="evento.categoria" #eventoCategoria="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoCategoria.invalid }" required>
+						<option [value]="categoria" *ngFor="let categoria of categorias"> {{categoria}} </option>
+					</select>
 					<div class="invalid-feedback">
-						<div>The book's editorial is missing</div>
+						<div>Debe elegir una categoría</div>
 					</div>
 				</div>
 
@@ -91,8 +93,8 @@
 				</div>
 			</form>
 			<br>
-        </div>
 		</div>
 	</div>
-	<br>
-	<br>
+</div>
+<br>
+<br>
