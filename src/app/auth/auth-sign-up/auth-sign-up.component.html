@@ -1,25 +1,26 @@
 <div class="row">
     <div class="col-6 offset-3">
         <br>
-        <h2 class="text-center">Sign up</h2>
+        <h2 class="text-center" style="color:#6FFFE9;">Regístrate</h2>
         <br>
         <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="username"><b>Name</b></label>
+                <label for="username" style="color:#6FFFE9;"><b>Correo</b></label>
                 <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name" required>
             </div>
             <div class="form-group">
-                <label for="password"><b>Password</b></label>
-                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
+                <label for="password" style="color:#6FFFE9;"><b>Contraseña</b></label>
+                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password"
+                    required>
             </div>
             <div class="form-group">
-                <label for="role"><b>Role</b></label>
+                <label for="role" style="color:#6FFFE9;"><b>Tipo de usuario</b></label>
                 <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
                     <option [value]="role" *ngFor="let role of roles">{{role}}</option>
                 </select>
             </div>
-            <div class="justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary"> Sign Up</button>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-info"> Registrar</button>
             </div>
         </form>
     </div>
