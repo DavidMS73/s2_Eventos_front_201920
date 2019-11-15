@@ -33,54 +33,54 @@
 		</div>
 	</div>
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-					<b style ="color: #FFFFFF;">Eventos proximos</b> 
-					&nbsp;&nbsp;&nbsp;
-					<b style="color:#FFFFFF;">Fecha: </b>
-					&nbsp;&nbsp;&nbsp;
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					  <span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<div class="form-group">
-							<div [ngClass]="{ 'is-invalid': f.submitted && eventoFechaInicio.invalid }">
-								<input class="form-control" id="eventoFechaInicio" name="eventoFechaInicio"
-									[(ngModel)]="evento.fechaInicio" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
-									#eventoFechaInicio="ngModel"
-									[ngClass]="{'is-invalid': (eventoFechaInicio.untouched || eventoFechaInicio.invalid) }"
-									required>
-								<div class="invalid-feedback">
-									<div style="color:#FFFF;">Debe definir una fecha de inicio</div>
-								</div>
-							</div>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<b style="color: #FFFFFF;">Eventos proximos</b>
+			&nbsp;&nbsp;&nbsp;
+			<b style="color:#FFFFFF;">Fecha: </b>
+			&nbsp;&nbsp;&nbsp;
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="form-group">
+					<div [ngClass]="{ 'is-invalid': f.submitted && eventoFechaInicio.invalid }">
+						<input class="form-control" id="eventoFechaInicio" name="eventoFechaInicio"
+							[(ngModel)]="evento.fechaInicio" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+							#eventoFechaInicio="ngModel"
+							[ngClass]="{'is-invalid': (eventoFechaInicio.untouched || eventoFechaInicio.invalid) }"
+							required>
+						<div class="invalid-feedback">
+							<div style="color:#FFFF;">Debe definir una fecha de inicio</div>
 						</div>
-					  <button type="button" class="btn btn-dark" routerLink="auth/login">Iniciar sesión</button>
-					  &nbsp; &nbsp;
-					  &nbsp;
-					  <button type="button" class="btn btn-dark" routerLink="auth/sign-up">Registrarse</button>
 					</div>
-				  </nav>
-	<div class="m-5 row">
-		<div class="col">
+				</div>
+				<button type="button" class="btn btn-dark" routerLink="auth/login">Iniciar sesión</button>
+				&nbsp; &nbsp;
+				&nbsp;
+				<button type="button" class="btn btn-dark" routerLink="auth/sign-up">Registrarse</button>
+			</div>
+		</nav>
+		<div class="m-5 row">
+			<div class="col">
 
-		</div>
-		<div class="col+2">
-			<router-outlet name="detail"></router-outlet>
-		</div>
-	</div>
-</div>
-<div class="container-fluid">
-	<div class="col">
-		<div class="card" style="width: 17rem;" *ngFor="let evento of eventos">
-			<div class="card-body">
-				<h5 class="card-title">{{evento.nombre}}</h5>
-				<h6>{{evento.fechaInicio}}-{{evento.fechaFin}}</h6>
-				<h6>Entradas restantes: {{evento.entradasRestantes}}</h6>
-				<h6>Valor: {{evento.valor}} pesos</h6>
-				<a class="btn btn-primary" [routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
-					evento</a>
+			</div>
+			<div class="col+2">
+				<router-outlet name="detail"></router-outlet>
 			</div>
 		</div>
 	</div>
-</div>
+	<div class="container-fluid">
+		<div class="col">
+			<div class="card" style="width: 17rem;" *ngFor="let evento of eventos">
+				<div class="card-body">
+					<h5 class="card-title">{{evento.nombre}}</h5>
+					<h6>{{evento.fechaInicio}}-{{evento.fechaFin}}</h6>
+					<h6>Entradas restantes: {{evento.entradasRestantes}}</h6>
+					<h6>Valor: {{evento.valor}} pesos</h6>
+					<a class="btn btn-primary" [routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
+						evento</a>
+				</div>
+			</div>
+		</div>
+	</div>
