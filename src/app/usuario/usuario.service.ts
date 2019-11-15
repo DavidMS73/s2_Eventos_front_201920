@@ -1,10 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Usuario } from "./usuario";
+import { Tarjeta } from "./tarjeta";
 import { Observable } from "rxjs";
 
-const API_URL = "../../assets/";
-const usuarios = "usuarios.json";
+import {environment} from '../../environments/environment';
+const API_URL = environment.apiURL;
+const usuarios = "/usuarios";
+const tarjetas = "/tarjetas";
 
 @Injectable()
 export class UsuarioService {
@@ -18,5 +21,7 @@ export class UsuarioService {
     return this.http.post<Usuario>(API_URL + usuarios, usuario);
   }
 
-
+  createTarjeta(usuarioId, tarjeta): Observable<Tarjeta>{
+    return this.http.post<Tarjeta>(API_URL + usuarios + '/' + usuarioId + tarjetas, tarjeta);
+  }
 }
