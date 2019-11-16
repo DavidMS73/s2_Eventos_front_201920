@@ -12,4 +12,5 @@ export class Usuario {
     empresa: string;
     tipo:string;
 
+    
 }
