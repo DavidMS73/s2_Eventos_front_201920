@@ -36,4 +36,5 @@ export class Lugar
      * Representa el nombre del lugar
      */
     nombre : string;
+
 }

@@ -13,18 +13,19 @@ export class MultimediaListComponent implements OnInit {
   /**
   * The list of lugares which belong to the app
   */
-  multimedas: Multimedia[];
+  multimedias: Multimedia[];
 
   /**
   * Asks the service to update the list of lugares
   */
   getMultimedias(): void {
-    this.multimediaService.getMultimedias;
+    this.multimediaService.getMultimedias().subscribe(multimedias=>(this.multimedias=multimedias));
+
   }
 
   createLugar(): void {
-    this.multimediaService.createMultimedia;
-    this.getMultimedias;
+    this.multimediaService.createMultimedia();
+    this.getMultimedias();
   }
 
   /**
@@ -38,6 +39,6 @@ export class MultimediaListComponent implements OnInit {
   * This method will be called when the component is created
   */
   ngOnInit() {
-    this.getMultimedias;
+    this.getMultimedias();
   }
 }

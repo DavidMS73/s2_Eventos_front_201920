@@ -1,3 +1,7 @@
+import {Evento} from "../evento/evento";
+import {Pago} from "../pago/pago"
+import { Tarjeta } from "../tarjeta/tarjeta";
+import {Pse} from "../pse/pse";
 export class Usuario {
     id: number;
     nombre: string;
@@ -6,4 +10,6 @@ export class Usuario {
     estudios: string;
     codigoQR: string;
     empresa: string;
+    tipo:string;
+
 }

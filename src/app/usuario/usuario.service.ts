@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Usuario } from "./usuario";
-import { Tarjeta } from "./tarjeta";
+import { Tarjeta } from "../tarjeta/tarjeta";
 import { Observable } from "rxjs";
 
 import {environment} from '../../environments/environment';
@@ -16,7 +16,6 @@ export class UsuarioService {
   getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(API_URL + usuarios);
   }
-
   createUsuario(usuario): Observable<Usuario> {
     return this.http.post<Usuario>(API_URL + usuarios, usuario);
   }

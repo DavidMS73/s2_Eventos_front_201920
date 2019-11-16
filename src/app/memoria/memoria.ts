@@ -1,6 +1,9 @@
 import { Evento } from '../evento/evento'
 
 export class Memoria {
+  /**
+   * El identificador de la memoria
+   */
   id: number;
   /**
    * Atributo que modela el lugar de la memoria
@@ -16,4 +19,8 @@ export class Memoria {
    * Atributo que modela la fecha de la memoria
    */
   fecha: Date; //any
+/**
+ * Representa la multimedia 
+ */
+  imagen: string;
 }
