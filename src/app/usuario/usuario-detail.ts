@@ -9,5 +9,6 @@ export class UsuarioDetail extends Usuario{
     pses:Pse[];
     eventos:Evento[];
     pagos :Pago[];
+
     
 }
