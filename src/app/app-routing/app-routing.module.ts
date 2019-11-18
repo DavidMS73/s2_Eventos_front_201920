@@ -14,7 +14,12 @@ import { EventoCreateComponent } from "../evento/evento-create/evento-create.com
 
 import { UsuarioListComponent } from '../usuario/usuario-list/usuario-list.component';
 import { UsuariosCreateComponent } from "../usuario/usuario-create/usuario-create.component";
-import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
+import { PatrocinioListComponent } from '../patrocinio/patrocinio-list/patrocinio-list.component';
+import { LugarListComponent } from '../lugar/lugar-list/lugar-list.component';
+import { LugarCreateComponent } from '../lugar/lugar-create/lugar-create.component';
+import {PagoListComponent} from '../pago/pago-list/pago-list.component';
+import {PseListComponent} from '../pse/pse-list/pse-list.component';
+import{TarjetaListComponent} from '../tarjeta/tarjeta-list/tarjeta-list.component';
 const routes: Routes = [
 
     {
@@ -41,7 +46,7 @@ const routes: Routes = [
                 }
             }
         ]
-    }, 
+    },
     {
         path: 'memorias',
         children: [
@@ -65,6 +70,16 @@ const routes: Routes = [
 
     },
     {
+        path: 'tarjetas',
+        children: [
+            {
+                path: 'list',
+                component: TarjetaListComponent
+            }
+        ]
+
+    },
+    {
         path: "usuarios",
         children: [
             { path: "list", component: UsuarioListComponent },
@@ -83,17 +98,48 @@ const routes: Routes = [
 
     },
     {
-        path: "eventos",
-    children: [
-      { path: "list", component: EventoListComponent },
-      { path: "add", component: EventoCreateComponent },
+        path: 'lugares',
+        children: [
+            {
+                path: 'list',
+                component: LugarListComponent
+            },
+            { path: 'add', component: LugarCreateComponent }
+        ]
 
-      {
-        path: ":id",
-        component: EventoDetailComponent,
-        outlet: "detail"
-      }
-    ]
+    },
+    {
+        path: 'pagos',
+        children: [
+            {
+                path: 'list',
+                component: PagoListComponent
+            }
+        ]
+
+    },
+    {
+        path: 'pses',
+        children: [
+            {
+                path: 'list',
+                component: PseListComponent
+            }
+        ]
+
+    },
+    {
+        path: "eventos",
+        children: [
+            { path: "list", component: EventoListComponent },
+            { path: "add", component: EventoCreateComponent },
+
+            {
+                path: ":id",
+                component: EventoDetailComponent,
+                outlet: "detail"
+            }
+        ]
     },
     {
         path: '**',

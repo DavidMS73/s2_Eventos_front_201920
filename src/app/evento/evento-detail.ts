@@ -3,6 +3,7 @@ import { ActividadEvento } from '../actividadevento/actividadevento';
 import { Patrocinio } from '../patrocinio/patrocinio';
 import { Usuario } from '../usuario/usuario';
 import {Memoria} from '../memoria/memoria';
+import { Pago } from "../pago/pago";
 
 /**
 * Representa un EventoDetail de LesIndestructibles. 
@@ -29,4 +30,6 @@ export class EventoDetail extends Evento {
    * Memorias del evento
    */
   memorias:Memoria[];
+
+  pagos: Pago[]; 
 }

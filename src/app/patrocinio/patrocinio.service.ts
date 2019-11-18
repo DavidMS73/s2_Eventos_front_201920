@@ -3,9 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { Patrocinio } from "./patrocinio";
 
 import { Observable } from "rxjs";
+import { environment } from "../../environments/environment";
 
-const API_URL = "../../assets/";
-const patrocinios = "patrocinios.json";
+const API_URL = environment.apiURL;
+const patrocinios = "/patrocinios";
 
 @Injectable()
 export class PatrocinioService {

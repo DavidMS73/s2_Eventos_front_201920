@@ -23,6 +23,7 @@ export class EventoListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService) {
+    this.eventos = [];
   }
 
   /**
@@ -84,29 +85,29 @@ export class EventoListComponent implements OnInit {
   /**
     * Borra un evento
     */
-   deleteEvento(eventoId): void {
+  deleteEvento(eventoId): void {
     this.modalDialogService.openDialog(this.viewRef, {
-        title: 'Eliminar un evento',
-        childComponent: SimpleModalComponent,
-        data: {text: '¿Seguro que desea eliminar el evento?'},
-        actionButtons: [
-            {
-                text: 'Yes',
-                buttonClass: 'btn btn-danger',
-                onAction: () => {
-                    this.eventoService.deleteEvento(eventoId).subscribe(() => {
-                        this.toastrService.error("El evento fue eliminado satisfactoriamente", "Evento eliminado");
-                        this.ngOnInit();
-                    }, err => {
-                        this.toastrService.error(err, "Error");
-                    });
-                    return true;
-                }
-            },
-            {text: 'No', onAction: () => true}
-        ]
+      title: 'Eliminar un evento',
+      childComponent: SimpleModalComponent,
+      data: { text: '¿Seguro que desea eliminar el evento?' },
+      actionButtons: [
+        {
+          text: 'Yes',
+          buttonClass: 'btn btn-danger',
+          onAction: () => {
+            this.eventoService.deleteEvento(eventoId).subscribe(() => {
+              this.toastrService.error("El evento fue eliminado satisfactoriamente", "Evento eliminado");
+              this.ngOnInit();
+            }, err => {
+              this.toastrService.error(err, "Error");
+            });
+            return true;
+          }
+        },
+        { text: 'No', onAction: () => true }
+      ]
     });
-}
+  }
 
 
   /**

@@ -12,4 +12,4 @@ import { FormsModule } from "@angular/forms";
   exports: [PseListComponent],
   providers: [PseService]
 })
-export class UsuarioModule { }
+export class PseModule { }

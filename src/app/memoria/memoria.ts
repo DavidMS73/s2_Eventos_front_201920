@@ -18,7 +18,7 @@ export class Memoria {
   /**
    * Atributo que modela la fecha de la memoria
    */
-  fecha: Date; //any
+  fecha: any; //any
 /**
  * Representa la multimedia 
  */

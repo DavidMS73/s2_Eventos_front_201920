@@ -44,7 +44,9 @@ export class LugarListComponent implements OnInit {
   constructor(private lugarService: LugarService,
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService) {
+      this.lugares=[];
+     }
 
     
   /**

@@ -21,7 +21,7 @@ export class MemoriaService {
     return this.http.get<Memoria[]>(API_URL + memorias);
   }
 
-  createMemoria(): Observable<Memoria> {
+  createMemoria(memoria): Observable<Memoria> {
     return this.http.post<Memoria>(API_URL + memorias,
       {
         "lugar": "Bogota",
