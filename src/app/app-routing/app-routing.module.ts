@@ -17,9 +17,9 @@ import { UsuariosCreateComponent } from "../usuario/usuario-create/usuario-creat
 import { PatrocinioListComponent } from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import { LugarListComponent } from '../lugar/lugar-list/lugar-list.component';
 import { LugarCreateComponent } from '../lugar/lugar-create/lugar-create.component';
-import {PagoListComponent} from '../pago/pago-list/pago-list.component';
-import {PseListComponent} from '../pse/pse-list/pse-list.component';
-import{TarjetaListComponent} from '../tarjeta/tarjeta-list/tarjeta-list.component';
+import { PagoListComponent } from '../pago/pago-list/pago-list.component';
+import { PseListComponent } from '../pse/pse-list/pse-list.component';
+import { TarjetaListComponent } from '../tarjeta/tarjeta-list/tarjeta-list.component';
 const routes: Routes = [
 
     {

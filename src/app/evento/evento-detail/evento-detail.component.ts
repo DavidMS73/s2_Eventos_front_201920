@@ -63,8 +63,8 @@ export class EventoDetailComponent implements OnInit {
   /**
     * El método retorna los detalles del evento que se quiere mostrar
     */
-  getEventoDetail(): void {
-    this.eventoService.getEventoDetail(this.evento_id).subscribe(o => { this.eventoDetail = o; });
+  getEventoDetail(evento_id): void {
+    this.eventoService.getEventoDetail(this.evento_id).subscribe(eventoDetail => { this.eventoDetail = eventoDetail; });
   }
 
   /**
@@ -112,7 +112,7 @@ export class EventoDetailComponent implements OnInit {
   ngOnInit() {
     this.evento_id = +this.route.snapshot.paramMap.get('id');
     this.eventoDetail = new EventoDetail();
-    this.getEventoDetail();
+    this.getEventoDetail(this.evento_id);
     this.getOtrosEventos();
   }
 

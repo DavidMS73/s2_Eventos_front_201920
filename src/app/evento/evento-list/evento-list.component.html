@@ -80,7 +80,6 @@
 			<router-outlet name="detail"></router-outlet>
 		</div>
 	</div>
-
 	<div class="card mb-3"  style="background-color:#3A506B;" *ngFor="let evento of eventos">
 		<img class="card-img-top" src={{evento.imagen}} alt="Card image cap" width="1800" height="200">
 		<div class="card-body"  style="background-color:#3A506B;">
@@ -89,7 +88,7 @@
 			<h6 class="card-text">
 				<h6  style ="color:#5BC0BE ;">Entradas restantes: {{evento.entradasRestantes}}</h6>
 				<h6  style ="color:#5BC0BE ;">Valor: {{evento.valor}} pesos</h6>
-				<button class="btn btn-info">Ver evento</button>
+				<button class="btn btn-info" href="javascript:location.reload()" [routerLink] ="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver evento</button>
 			</h6>
 		</div>
 	</div>
