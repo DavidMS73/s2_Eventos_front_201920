@@ -6,10 +6,14 @@ import { Evento } from "./evento";
 import { EventoDetail } from "./evento-detail";
 
 import { environment } from "../../environments/environment";
+import { Memoria } from "./memoria";
+
 //const API_URL ="../../assets";
 //const eventos = "/eventos.json";
 const API_URL = environment.apiURL;
 const eventos = "/eventos";
+const memorias = '/memorias';
+
 
 /**
  * El proveedor de servicios para todo lo relacionado a eventos
@@ -68,4 +72,8 @@ export class EventoService {
   deleteEvento(eventoId): Observable<EventoDetail> {
     return this.http.delete<EventoDetail>(API_URL + eventos + "/" + eventoId);
   }
+ // ----------------------------------------------Metodos relacionados con las relaciones--------------------------------------------------------------
+ createMemoria(eventoId, memoria): Observable<Memoria> {
+  return this.http.post<Memoria>(API_URL + eventos + '/' + eventoId + memorias, memoria);
+}
 }

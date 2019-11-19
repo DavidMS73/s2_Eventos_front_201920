@@ -48,4 +48,8 @@ export class Evento {
      * Valor del evento
      */
     valor: number;
+    /**
+     * Imagen del evento
+     */
+    imagen :string;
 }  

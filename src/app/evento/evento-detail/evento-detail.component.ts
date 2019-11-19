@@ -81,7 +81,7 @@ export class EventoDetailComponent implements OnInit {
   /**
   * La función elimina un evento de LesIndestructibles 
   */
-  deleteBook(): void {
+  deleteEvento(): void {
     this.modalDialogService.openDialog(this.viewRef, {
       title: 'Delete a book',
       childComponent: SimpleModalComponent,

@@ -56,7 +56,8 @@
 						[ngClass]="{ 'is-invalid': f.submitted && eventoDetalles.invalid }">
 				</div>
 				<div class="form-group">
-					<label for="eventoEntradasRestantes" style="color:#6FFFE9;"><b>Cantidad de entradas al evento</b></label>
+					<label for="eventoEntradasRestantes" style="color:#6FFFE9;"><b>Cantidad de entradas al
+							evento</b></label>
 					<input type="text" name="eventoEntradasRestantes" class="form-control" id="eventoEntradasRestantes"
 						[(ngModel)]="evento.entradasRestantes" #eventoEntradasRestantes="ngModel"
 						[ngClass]="{ 'is-invalid': f.submitted && eventoEntradasRestantes.invalid }" required>
@@ -81,10 +82,18 @@
 						<option [value]="categoria" *ngFor="let categoria of categorias"> {{categoria}} </option>
 					</select>
 					<div class="invalid-feedback">
-						<div >Debe elegir una categoría</div>
+						<div>Debe elegir una categoría</div>
 					</div>
 				</div>
-
+				<div class="form-group">
+					<label for="eventoImagen" style="color:#6FFFE9;"><b>Imagen del evento</b></label>
+					<input type="text" name="eventoImagen" class="form-control" id="eventoImagen"
+						[(ngModel)]="evento.imagen" #eventoImagen="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && eventoImagen.invalid }" required>
+					<div class="invalid-feedback">
+						<div>Debe definir la imagen del evento</div>
+					</div>
+				</div>
 				<br>
 				<div class="row form-inline justify-content-center align-self-center">
 					<button type="submit" class="btn btn-info">Create</button>
