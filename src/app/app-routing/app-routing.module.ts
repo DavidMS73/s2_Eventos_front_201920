@@ -53,11 +53,7 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MemoriaListComponent
-            }/*,
-        {
-            path: 'id',
-            component: MemoriaDetailComponent
-        }*/]
+            }]
     },
     {
         path: 'medioDePago',

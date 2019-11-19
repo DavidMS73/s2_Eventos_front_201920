@@ -1,50 +1,49 @@
-
-<p>Hola Gente</p><body style="background-color: #0B132B;">
-        <div class="container-fluid">
+<body style="background-color: #3A506B;">
+    <div class="container-fluid">
         <div class="row">
-            <h1>{{eventoDetail.nombre}}
+            <h1 style="color:#6fffe9">{{eventoDetail.nombre}}
             </h1>
         </div>
         <div class="row">
-            <b>Descripcion:</b> &nbsp;<p>{{eventoDetail.descripcion}}
+            <b style="color:#5bc0be">Descripcion:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.descripcion}}
             </p>
         </div>
         <div class="row">
-            <b>Categoria:</b> &nbsp;<p>{{eventoDetail.categoria}}
+            <b style="color:#5bc0be">Categoria:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.categoria}}
             </p>
         </div>
         <div class="row">
-            <b>Fecha inicial:</b>
-            <p> &nbsp;{{eventoDetail.fechaInicio}}
+            <b style="color:#5bc0be">Fecha inicial:</b>
+            <p style="color:#ffffff"> &nbsp;{{eventoDetail.fechaInicio}}
             </p>
         </div>
         <div class="row">
-            <b>Fecha fin:</b>
-            <p> &nbsp;{{eventoDetail.fechaFin}}
+            <b style="color:#5bc0be">Fecha fin:</b>
+            <p style="color:#ffffff"> &nbsp;{{eventoDetail.fechaFin}}
             </p>
         </div>
         <div class="row">
-            <b>Detalles adicionales:</b>
-            <p> &nbsp;{{eventoDetail.detallesAdicionales}}
+            <b style="color:#5bc0be">Detalles adicionales:</b>
+            <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
             </p>
         </div>
         <div class="row">
-            <b>Valor: </b>
-            <p>&nbsp;{{eventoDetail.valor}}&nbsp; pesos
+            <b style="color:#5bc0be">Valor: </b>
+            <p style="color:#ffffff">&nbsp;{{eventoDetail.valor}}&nbsp; pesos
             </p>
         </div>
         <div class="row">
-            <h3>Actividades del evento:</h3>
+            <h3 style="color:#5bc0be">Actividades del evento:</h3>
         </div>
         <div class="row">
-            <table class="table">
+            <table class="table" style="color:#5bc0be">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Hora inicio</th>
-                    <th>Hora fin</th>
+                    <th style="color:#5bc0be">Nombre</th>
+                    <th style="color:#5bc0be">Fecha</th>
+                    <th style="color:#5bc0be">Hora inicio</th>
+                    <th style="color:#5bc0be">Hora fin</th>
                 </tr>
-                <tr *ngFor="let actividad of eventoDetail.actividadesEvento">
+                <tr *ngFor="let actividad of eventoDetail.actividadesEvento" style="color:#ffffff">
                     <td>{{actividad.nombre}} </td>
                     <td>{{actividad.fecha}} </td>
                     <td>{{actividad.horaInicio}} </td>
@@ -52,45 +51,39 @@
 
                 </tr>
             </table>
+        </div>
             <div class="row">
-                <h3>Usuarios del evento:</h3>
+                <h3 style="color:#5bc0be">Usuarios del evento:</h3>
             </div>
-            <div class="container-fluid">
                 <div class="row">
                     <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
                         <div class="card-body">
-                            <h5 class="card-title">{{usuario.correo}}</h5>
-                            <h6>{{usuario.nombre}}</h6>
+                            <h5 class="card-title" style="color:#5bc0be">{{usuario.correo}}</h5>
+                            <h6 style="color:#ffffff">{{usuario.nombre}}</h6>
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="row">
-                <h3>Memorias del evento:</h3>
+                <h3 style="color:#5bc0be">Memorias del evento:</h3>
             </div>
-            <div class="container-fluid">
                 <div class="row">
                     <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
                         <div class="card-body">
-                            <h5 class="card-title">{{memoria.lugar}}</h5>
-                            <h6>{{memoria.fecha}}</h6>
+                            <h5 class="card-title" style="color:#ffffff">{{memoria.lugar}}</h5>
+                            <h6 style="color:#ffffff">{{memoria.fecha}}</h6>
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="row">
-                <h3>Patrocinadores del evento:</h3>
+                <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
             </div>
-            <div class="container-fluid">
                 <div class="row">
                     <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
                         <div class="card-body">
-                            <h5 class="card-title">{{patrocinio.empresa}}</h5>
-                            <h6>{{patrocinio.tipo}}</h6>
+                            <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
+                            <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-    </div>
 </body>
