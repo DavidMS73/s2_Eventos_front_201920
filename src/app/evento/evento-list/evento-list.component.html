@@ -88,7 +88,7 @@
 			<h6 class="card-text">
 				<h6  style ="color:#5BC0BE ;">Entradas restantes: {{evento.entradasRestantes}}</h6>
 				<h6  style ="color:#5BC0BE ;">Valor: {{evento.valor}} pesos</h6>
-				<button class="btn btn-info" href="javascript:location.reload()" [routerLink] ="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver evento</button>
+				<button class="btn btn-info"  [routerLink] ="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver evento</button>
 			</h6>
 		</div>
 	</div>

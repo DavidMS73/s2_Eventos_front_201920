@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angu
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 
-import { Memoria } from '../memoria';
+import { Memoria } from '../../memoria/memoria';
 import { EventoService } from '../evento.service';
 import { Evento } from '../evento';
 
@@ -32,12 +32,11 @@ export class EventoCreateMemoriaComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.memoria = new Memoria();
-
     }
 
     postMemoria(reviewForm: NgForm): Memoria {
         this.memoria.evento = this.evento;
-        this.eventoService.createMemoria(this.evento.id, this.memoria)
+        this.eventoService.createEventoMemoria(this.evento.id, this.memoria)
             .subscribe(() => {
                 reviewForm.resetForm();
                 this.updateMemorias.emit();

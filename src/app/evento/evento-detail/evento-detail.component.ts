@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, OnDestroy, ViewChild, ViewContainerRef, Input } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd, Params } from '@angular/router';
 import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
 import { ToastrService } from 'ngx-toastr';
 
@@ -39,15 +39,18 @@ export class EventoDetailComponent implements OnInit {
     });
   }
 
+  loader:any;
   /**
     * Id del evento recuperado del path
     */
-  evento_id: number;
+  evento_id: number;  
+
+  public isCollapsed = true;
 
   /**
     * El evento cuyos detalles son mostraddos
     */
-  eventoDetail: EventoDetail;
+   @Input() eventoDetail: EventoDetail;
 
   /**
     * Los otros eventos mostrados en la barra lateral
@@ -63,7 +66,7 @@ export class EventoDetailComponent implements OnInit {
   /**
     * El método retorna los detalles del evento que se quiere mostrar
     */
-  getEventoDetail(evento_id): void {
+  getEventoDetail(): void {
     this.eventoService.getEventoDetail(this.evento_id).subscribe(eventoDetail => { this.eventoDetail = eventoDetail; });
   }
 
@@ -104,15 +107,21 @@ export class EventoDetailComponent implements OnInit {
       ]
     });
   }
-
+  onLoad(params) {
+    this.evento_id = parseInt(params['id']);
+    console.log(" en detail " + this.evento_id);
+    this.eventoDetail = new EventoDetail();
+    this.getEventoDetail();
+  }   
   /**
     * Método que inicializa el componente
     * Inicializamos el evento para nunca ser considerados indefinidos
     */
   ngOnInit() {
+    this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
     this.evento_id = +this.route.snapshot.paramMap.get('id');
     this.eventoDetail = new EventoDetail();
-    this.getEventoDetail(this.evento_id);
+    this.getEventoDetail();
     this.getOtrosEventos();
   }
 

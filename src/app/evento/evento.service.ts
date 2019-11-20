@@ -6,7 +6,7 @@ import { Evento } from "./evento";
 import { EventoDetail } from "./evento-detail";
 
 import { environment } from "../../environments/environment";
-import { Memoria } from "./memoria";
+import { Memoria } from "../memoria/memoria";
 
 //const API_URL ="../../assets";
 //const eventos = "/eventos.json";
@@ -73,7 +73,10 @@ export class EventoService {
     return this.http.delete<EventoDetail>(API_URL + eventos + "/" + eventoId);
   }
  // ----------------------------------------------Metodos relacionados con las relaciones--------------------------------------------------------------
- createMemoria(eventoId, memoria): Observable<Memoria> {
+ createEventoMemoria(eventoId, memoria): Observable<Memoria> {
   return this.http.post<Memoria>(API_URL + eventos + '/' + eventoId + memorias, memoria);
+}
+getEventoMemoria(eventoId, memoriaId){
+  return this.http.get<Memoria>(API_URL+eventos+'/'+eventoId+memorias+'/'+memoriaId);
 }
 }
