@@ -1,7 +1,9 @@
+
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Router } from "@angular/router";
 import { DatePipe } from "@angular/common";
 import { ToastrService } from "ngx-toastr";
+
 import {MemoriaService} from '../memoria.service';
 import {Memoria} from '../memoria';
 import { Evento } from "../../evento/evento";
@@ -49,16 +51,22 @@ export class MemoriaCreateComponent implements OnInit {
       }
       createMemoria(): Memoria {
         let fechaMemoria: Date = new Date(this.memoria.fecha.year, this.memoria.fecha.month - 1, this.memoria.fecha.day);
-        this.memoria.fecha = this.dp.transform(fechaMemoria, 'yyyy-MM-dd');
+        let date = this.dp.transform(fechaMemoria, 'yyyy-MM-ddT00:00:00-05:00');
+        this.memoria.fecha = fechaMemoria;
+
+        console.log(this.memoria);
+
         this.memoriaService.createMemoria(this.memoria)
             .subscribe(memoria => {
                 this.memoria.id = memoria.id;
-                this.router.navigate(['/memorias/' + memoria.id]);
+                this.create.emit();
+                this.toastrService.success("El evento fue creado", "Creación evento");
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
         return this.memoria;
     }
+
     ngOnInit() {
         this.memoria= new Memoria();
         this.memoria.evento= new Evento();

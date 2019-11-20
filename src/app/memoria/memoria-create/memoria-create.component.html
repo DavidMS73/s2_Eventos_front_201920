@@ -1,0 +1,83 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<br>
+			<h2 class="text-center" style="color:#6FFFE9;">Agrega una nueva memoria</h2>
+			<br>
+			<form name="memoria" (ngSubmit)="f.form.valid && createMemoria()" #f="ngForm" novalidate>
+				<div class="form-group">
+					<label for="memoriaNombre" style="color:#6FFFE9;"><b>Nombre</b></label>
+					<input type="text" name="memoriaNombre" class="form-control" id="memoriaNombre"
+						[(ngModel)]="memoria.nombre" #memoriaNombre="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && memoriaNombre.invalid }" required>
+					<div class="invalid-feedback">
+						<div style="color:#FFFF;">Debe definir el nombre de la memoria</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="memoriaFecha" style="color:#6FFFE9;"><b>Fecha: </b></label>
+					<div [ngClass]="{ 'is-invalid': f.submitted && memoriaFecha.invalid }">
+						<input class="form-control" id="memoriaFecha" name="memoriaFecha"
+                            [(ngModel)]="memoria.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                            #memoriaFecha="ngModel"
+							[ngClass]="{'is-invalid': (memoriaFecha.untouched || memoriaFecha.invalid) }"
+							required>
+						<div class="invalid-feedback">
+							<div style="color:#FFFF;">Debe definir una fecha</div>
+						</div>
+					</div>
+                </div>
+                <!--<div class="form-group">
+						<label for="memoriaFecha" style="color:#6FFFE9;"><b>Fecha</b></label>
+						<input type="text" name="memoriaFecha" class="form-control" id="memoriaFecha"
+							[(ngModel)]="memoria.fecha" #memoriaLugar="ngModel"
+							[ngClass]="{ 'is-invalid': f.submitted && memoriaFecha.invalid }" required>
+						<div class="invalid-feedback">
+							<div style="color:#FFFF;">Debe definir la fecha de la memoria</div>
+						</div>
+				</div>-->
+				<div class="form-group">
+						<label for="memoriaLugar" style="color:#6FFFE9;"><b>Lugar</b></label>
+						<input type="text" name="memoriaLugar" class="form-control" id="memoriaLugar"
+							[(ngModel)]="memoria.lugar" #memoriaLugar="ngModel"
+							[ngClass]="{ 'is-invalid': f.submitted && memoriaLugar.invalid }" required>
+						<div class="invalid-feedback">
+							<div style="color:#FFFF;">Debe definir el lugar de la memoria</div>
+						</div>
+				</div>
+				<div class="form-group">
+						<label for="memoriaEvento" style="color:#6FFFE9;"><b>Evento</b></label>
+						<select class="custom-select" name="memoriaEvento" id="memoriaEvento" [(ngModel)]="memoria.evento.id"
+							#memoriaEvento="ngModel" [ngClass]="{ 'is-invalid': f.submitted && memoriaEvento.invalid }"
+							required>
+							<option [value]="evento.id" *ngFor="let evento of eventos">{{evento.nombre}}</option>
+						</select>
+						<div class="invalid-feedback">
+							<div style="color:#FFFF;">The memoria's evento is missing</div>
+						</div>
+                </div>
+
+                <div class="form-group">
+                        <label for="memoriaImagen" style="color:#6FFFE9;"><b>Imagen de la memoria</b></label>
+                        <input type="text" name="memoriaImagen" class="form-control" id="memoriaImagen"
+                            [(ngModel)]="memoria.imagen" #memoriaImagen="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && memoriaImagen.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div style="color:#FFFF;">Debe definir la imagen de la memoria</div>
+                        </div>
+                </div>
+
+				<br>
+				<div class="row form-inline justify-content-center align-self-center">
+					<button type="submit" class="btn btn-primary">Create</button>
+					<div class="divider"></div>
+					<button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+				</div>
+			</form>
+			<br>
+		</div>
+	</div>
+</div>
+<br>
+<br>

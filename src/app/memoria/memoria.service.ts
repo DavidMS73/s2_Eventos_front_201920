@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 
 //const API_URL = '../../assets/';
 //const memorias = 'memorias.json';
-const API_URL = 'http://localhost:8080/s2_eventos-api/api/';
-const memorias = 'memorias';
+const API_URL = 'http://localhost:8080/s2_eventos-api/api/eventos/';
+const evento_id = "1"
+const memorias = evento_id + '/memorias';
 
 @Injectable()
 export class MemoriaService {
@@ -23,16 +24,18 @@ export class MemoriaService {
 
   createMemoria(memoria): Observable<Memoria> {
     return this.http.post<Memoria>(API_URL + memorias,
-      {
+    memoria  
+    /*{
         "lugar": "Bogota",
         "fecha": "2020-09-10T05:00:00Z[UTC]",
         "evento": {
           "id": 8,
           "nombre": "Futbol",
           "descripcion": "..."
-        }
+        },
+        "imagen":"..."
 
-      }
+      }*/
     );
   }
 
