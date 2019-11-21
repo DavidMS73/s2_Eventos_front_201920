@@ -6,13 +6,15 @@
           <th>Memoria Place</th>
           <th>Memoria Date</th>
           <th>Memoria Evento</th>
+          <th>Memoria imagen</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let e of memorias">
-          <td>{{e.lugar}}</td>
-          <td>{{e.fecha}}</td>
-          <td>{{e.evento.nombre}}</td>
+          <td style="color:#6FFFE9;">{{e.lugar}}</td>
+          <td style="color:#6FFFE9;">{{e.fecha}}</td>
+          <td style="color:#6FFFE9;">{{e.evento.nombre}}</td>
+          <img class="card-img-top" src={{e.imagen}} alt="Card image cap" width="1800" height="200"><br/>
         </tr>
       </tbody>
     </table>
