@@ -2,6 +2,15 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
+import { environment } from '../../environments/environment';
+import { Usuario } from '../usuario/usuario';
+import { UsuarioDetail } from '../usuario/usuario-detail';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+const API_URL = environment.apiURL;
+const usuarios = "/usuarios";
 
 /**
  * The service provider for everything related to authentication
@@ -15,7 +24,7 @@ export class AuthService {
      * @param roleService NgxRolesService to manage authentication roles
      * @param permissionsService NgxPermissionsService to manage authentication permissions
      */
-    constructor (private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService) { }
+    constructor (private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
 
     start (): void {
         this.permissionsService.flushPermissions();
@@ -50,6 +59,10 @@ export class AuthService {
 
     printRole (): void {
         console.log(this.roleService.getRoles());
+    }
+
+    postCliente(user: Usuario): Observable<UsuarioDetail>{
+        return this.http.post<UsuarioDetail>(API_URL + usuarios, user);
     }
 
     /**

@@ -7,9 +7,7 @@ export class Usuario {
     nombre: string;
     correo: string;
     contrasena: string;
-    estudios: string;
     codigoQR: string;
-    empresa: string;
     tipo:string;
 
     

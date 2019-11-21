@@ -32,7 +32,7 @@ export class AuthLoginComponent implements OnInit {
     */
     login(): void {
         this.authService.login(this.user.role);
-        this.toastrService.success('Logged in')
+        this.toastrService.success('Logged in');
     }
 
     /**

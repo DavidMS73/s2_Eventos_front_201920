@@ -3,8 +3,8 @@ import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 
 import { Tarjeta } from '../tarjeta';
-import { Usuario } from '../../usuario';
-import { UsuarioService } from '../../usuario.service';
+import { Usuario } from '../../../usuario';
+import { UsuarioService } from '../../../usuario.service';
 
 @Component({
     selector: 'app-usuario-add-tarjeta',

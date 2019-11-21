@@ -28,22 +28,13 @@ const routes: Routes = [
             {
                 path: 'login',
                 component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
+                canActivate: [NgxPermissionsGuard]
+                
             },
             {
                 path: ':sign-up',
                 component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
+                canActivate: [NgxPermissionsGuard]
             }
         ]
     },
