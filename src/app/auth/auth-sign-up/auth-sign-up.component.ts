@@ -41,17 +41,17 @@ export class AuthSignUpComponent implements OnInit {
     * Sign the user up with the selected role
     */
     signUp(): void {
-        if(this.tipo == 'Cliente'){
-        
+        let ed;
             this.authService.postCliente(this.user).subscribe(usuarioBD => {
+                console.log("entro a esta verga");
                 this.user = usuarioBD;
                 localStorage.setItem('id', usuarioBD.id.toString());
                 let id = usuarioBD.id;
+                ed = id;
                 localStorage.setItem('correo', usuarioBD.correo);
                 this.toastrService.success("Se registró usuario");
-                this.router.navigateByUrl('/usuarios/' + id);
             });
-        }
+            this.router.navigateByUrl('/usuarios/' + ed);
     }
 
     /**

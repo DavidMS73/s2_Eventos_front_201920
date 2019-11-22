@@ -62,6 +62,7 @@ export class AuthService {
     }
 
     postCliente(user: Usuario): Observable<UsuarioDetail>{
+        console.log("entro a esta verga2");
         return this.http.post<UsuarioDetail>(API_URL + usuarios, user);
     }
 
