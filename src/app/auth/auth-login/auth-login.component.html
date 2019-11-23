@@ -6,18 +6,18 @@
             <br>
             <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
                 <div class="form-group">
-                    <label for="username" style="color:#6FFFE9;"><b>Correo</b></label>
-                    <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name"
+                    <label for="username" style="color:#6FFFE9;"><b>Username</b></label>
+                    <input type="text" name="username" class="form-control" id="username" [(ngModel)]="credencial.login"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="password" style="color:#6FFFE9;"><b>Contraseña</b></label>
-                    <input type="password" name="pwd" class="form-control" id="password" [(ngModel)]="user.password"
+                    <input type="password" name="pwd" class="form-control" id="password" [(ngModel)]="credencial.password"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="role" style="color:#6FFFE9;"><b>Tipo de usuario</b></label>
-                    <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
+                    <select class="custom-select" name="role" id="role" [(ngModel)]="user.tipo" required>
                         <option [value]="role" *ngFor="let role of roles">{{role}}</option>
                     </select>
                 </div>

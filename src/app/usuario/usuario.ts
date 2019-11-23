@@ -8,7 +8,8 @@ export class Usuario {
     correo: string;
     contrasena: string;
     codigoQR: string;
-    tipo:string;
+    tipo: string;
+    username: string;
 
     
 }

@@ -6,6 +6,8 @@ import { AuthService } from '../auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Credencial } from '../credencial';
 import { Usuario } from '../../usuario/usuario';
+import { UsuarioDetail } from '../../usuario/usuario-detail';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth-login',
@@ -22,9 +24,11 @@ export class AuthLoginComponent implements OnInit {
     constructor(
         private authService: AuthService,
         private toastrService: ToastrService,
+        private router: Router
     ) { }
-
-    user: Usuario;
+    
+    credencial: Credencial;
+    user: UsuarioDetail;
 
     roles: String[];
 
@@ -32,19 +36,21 @@ export class AuthLoginComponent implements OnInit {
     * Logs the user in with the selected role
     */
     login(): void {
-        let credencial = new Credencial();
-        credencial.login = this.user.correo;
-        credencial.password = this.user.contrasena;
-        this.authService.login(this.user.tipo);
-
-        this.toastrService.success('Logged in');
+        this.user = new UsuarioDetail();
+        this.authService.getCliente(this.credencial.login)
+        .subscribe(userDet => {
+            this.user = userDet;
+            localStorage.setItem('id', userDet.id.toString());
+            this.toastrService.success('Logged in');
+        })
+        this.router.navigateByUrl('/');
     }
 
     /**
     * This function will initialize the component
     */
     ngOnInit() {
-        this.user = new Usuario();
+        this.user = new UsuarioDetail();
         this.roles = ['Organizador', 'Cliente', 'Responsable', 'Representante'];
     }
 

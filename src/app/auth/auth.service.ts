@@ -66,6 +66,10 @@ export class AuthService {
         return this.http.post<UsuarioDetail>(API_URL + usuarios, user);
     }
 
+    getCliente(username: string): Observable<UsuarioDetail>{
+        return this.http.get<UsuarioDetail>(API_URL + usuarios + '/' + username);
+    }
+
     /**
      * Logs the user in with the desired role
      * @param role The desired role to set to the user
