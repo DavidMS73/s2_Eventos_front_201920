@@ -51,7 +51,8 @@ export class AuthSignUpComponent implements OnInit {
                 localStorage.setItem('correo', usuarioBD.correo);
                 this.toastrService.success("Se registró usuario");
             });
-            this.router.navigateByUrl('/usuarios/' + ed);
+            this.authService.setRol(this.user.tipo);
+            this.router.navigateByUrl('/');
     }
 
     /**

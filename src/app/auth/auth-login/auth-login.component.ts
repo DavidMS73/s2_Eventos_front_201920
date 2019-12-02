@@ -43,6 +43,7 @@ export class AuthLoginComponent implements OnInit {
             localStorage.setItem('id', userDet.id.toString());
             this.toastrService.success('Logged in');
         })
+        this.authService.setRol(this.user.tipo);
         this.router.navigateByUrl('/');
     }
 

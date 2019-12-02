@@ -30,13 +30,22 @@ const routes: Routes = [
             {
                 path: 'login',
                 component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard]
-                
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['INVITADO']
+                    }
+                } 
             },
             {
                 path: ':sign-up',
                 component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard]
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['INVITADO']
+                    }
+                }
             }
         ]
     },
