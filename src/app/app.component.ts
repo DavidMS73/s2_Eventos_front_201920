@@ -11,10 +11,16 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
 
+    idUsuario;
+
     /**
      * The title that appears on the NavBar and the web browser
      */
     title: String;
+
+    darValor():void{
+        this.idUsuario = localStorage.getItem('id');
+    }
 
     /**
      * Assigns a title to the web page
@@ -32,7 +38,10 @@ export class AppComponent implements OnInit {
     logout(): void {
         this.authService.logout()
     }
-
+    
+    darIdActual():string {
+        return localStorage.getItem("id");
+    }
 }
 
 

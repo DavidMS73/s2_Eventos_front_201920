@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-6 offset-3">
+        <br>
+        <h2 class="text-center" style="color:#6FFFE9;">Registrar tarjeta</h2>
+        <br>
+        <div  class="container-fluid">
+        <form name="sign-up" (ngSubmit)="f.form.valid && createTarjeta()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="tipo" style="color:#6FFFE9;"><b>Tipo de tarjeta</b></label>
+                <input type="text" name="tipo" class="form-control" id="correo" [(ngModel)]="tarjeta.tipoTarjeta" required>
+            </div>
+            <div class="form-group">
+                <label for="numeroTarjeta" style="color:#6FFFE9;"><b>Número tarjeta</b></label>
+                <input type="text" name="numeroTarjeta" class="form-control" id="numeroTarjeta" [(ngModel)]="tarjeta.numeroTarjeta" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaExp"><b>Fecha de expiracion</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && fechaExp.invalid }">
+                    <input type = "text" class="form-control" id="fechaExp" name="fechaExp" [(ngModel)]="tarjeta.expiracion"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #fechaExp="ngModel" [ngClass]="{'is-invalid': (fechaExp.untouched || fechaExp.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The book's publication date is missing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cvv" style="color:#6FFFE9;"><b>cvv</b></label>
+                <input type="text" name="cw" class="form-control" id="cvv" [(ngModel)]="tarjeta.cw"
+                    required>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-info"> Registrar tarjeta</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

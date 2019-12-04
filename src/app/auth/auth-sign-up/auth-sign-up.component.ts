@@ -23,6 +23,7 @@ export class AuthSignUpComponent implements OnInit {
         private router: Router
     ) { }
 
+    
     user: Usuario;
 
     nombre: string;
@@ -34,14 +35,14 @@ export class AuthSignUpComponent implements OnInit {
     codigoQR: string;
 
     tipo:string;
-
+ 
     roles: String[];
 
     /**
     * Sign the user up with the selected role
     */
     signUp(): void {
-        let ed;
+        let ed: number;
             this.authService.postCliente(this.user).subscribe(usuarioBD => {
                 console.log("entro a esta verga");
                 this.user = usuarioBD;

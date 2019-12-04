@@ -22,6 +22,7 @@ import { LugarCreateComponent } from '../lugar/lugar-create/lugar-create.compone
 import { PagoListComponent } from '../pago/pago-list/pago-list.component';
 import { PseListComponent } from '../pse/pse-list/pse-list.component';
 import { TarjetaListComponent } from '../tarjeta/tarjeta-list/tarjeta-list.component';
+import { TarjetaAddComponent } from '../medioDePago/tarjeta/tarjeta-add/tarjeta-add.component';
 const routes: Routes = [
 
     {
@@ -82,7 +83,8 @@ const routes: Routes = [
         path: "usuarios",
         children: [
             { path: "list", component: UsuarioListComponent },
-            { path: "add", component: UsuariosCreateComponent }
+            { path: "add", component: UsuariosCreateComponent },
+            { path: ":id/tarjetas", component: TarjetaAddComponent}
         ]
 
     },
