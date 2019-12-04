@@ -72,8 +72,14 @@
 				<div class="row form-inline justify-content-center align-self-center">
 					<button type="submit" class="btn btn-primary">Create</button>
 					<div class="divider"></div>
-					<button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
-				</div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    
+                </div>
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="button" class="btn btn-outline-light" 
+                     routerLink="/eventos/list" routerLinkActive="active">Volver a la lista de los eventos </button>
+                </div>
 			</form>
 			<br>
 		</div>

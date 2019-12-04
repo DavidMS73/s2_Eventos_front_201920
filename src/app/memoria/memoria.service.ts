@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Memoria } from './memoria';
 import { Observable } from 'rxjs';
+import { strictEqual } from 'assert';
 
 //const API_URL = '../../assets/';
 //const memorias = 'memorias.json';
 const API_URL = 'http://localhost:8080/s2_eventos-api/api/eventos/';
-const evento_id = "1"
-const memorias = evento_id + '/memorias';
+//const evento_id = "1"
+const memorias = /*evento_id + */'/memorias';
 
 @Injectable()
 export class MemoriaService {
@@ -23,7 +24,7 @@ export class MemoriaService {
   }
 
   createMemoria(memoria): Observable<Memoria> {
-    return this.http.post<Memoria>(API_URL + memorias,
+    return this.http.post<Memoria>(API_URL + memoria.evento.id.toString() + memorias,
     memoria  
     /*{
         "lugar": "Bogota",

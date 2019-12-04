@@ -60,7 +60,7 @@ export class MemoriaCreateComponent implements OnInit {
             .subscribe(memoria => {
                 this.memoria.id = memoria.id;
                 this.create.emit();
-                this.toastrService.success("El evento fue creado", "Creación evento");
+                this.toastrService.success("La memoria fue creada", "Creación memoria");
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
