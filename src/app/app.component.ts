@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
     /**
      * The title that appears on the NavBar and the web browser
      */
-    title: String;
+    title: string;
 
-    darValor():void{
+    darValor(): void {
         this.idUsuario = localStorage.getItem('id');
     }
 
@@ -38,8 +38,8 @@ export class AppComponent implements OnInit {
     logout(): void {
         this.authService.logout()
     }
-    
-    darIdActual():string {
+
+    darIdActual(): string {
         return localStorage.getItem("id");
     }
 }

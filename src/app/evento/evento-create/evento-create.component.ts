@@ -36,7 +36,7 @@ export class EventoCreateComponent implements OnInit {
   /**
     * Lista de categorías en LesIndestructibles
     */
-  categorias: String[] = ["Académico", "Cultural"];
+  categorias: string[] = ["Académico", "Cultural"];
 
   /**
     * El output el cual indica al componente padre que el
@@ -81,8 +81,6 @@ export class EventoCreateComponent implements OnInit {
 
     console.log(fechaInicio);
     console.log(fechaFin);
-    let fInicio = this.dp.transform(fechaInicio, "yyyy-MM-ddT00:00:00");
-    let fFin = this.dp.transform(fechaFin, "yyyy-MM-ddT00:00:00");
 
     this.evento.fechaInicio = fechaInicio;
     this.evento.fechaFin = fechaFin;

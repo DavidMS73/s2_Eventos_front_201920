@@ -4,8 +4,8 @@ import { Router } from "@angular/router";
 import { DatePipe } from "@angular/common";
 import { ToastrService } from "ngx-toastr";
 
-import {MemoriaService} from '../memoria.service';
-import {Memoria} from '../memoria';
+import { MemoriaService } from '../memoria.service';
+import { Memoria } from '../memoria';
 import { Evento } from "../../evento/evento";
 import { EventoService } from "../../evento/evento.service";
 
@@ -14,19 +14,19 @@ import { EventoService } from "../../evento/evento.service";
     templateUrl: "./memoria-create.component.html",
     styleUrls: ["./memoria-create.component.css"],
     providers: [DatePipe]
-  })
+})
 export class MemoriaCreateComponent implements OnInit {
 
     constructor(
-      private dp: DatePipe,
-      private memoriaService: MemoriaService,
-      private eventoService: EventoService,
-      private toastrService: ToastrService,
-      private router: Router
+        private dp: DatePipe,
+        private memoriaService: MemoriaService,
+        private eventoService: EventoService,
+        private toastrService: ToastrService,
+        private router: Router
     ) { }
-    
+
     eventos: Evento[];
-    
+
     memoria: Memoria;
 
     getEventos(): void {
@@ -48,10 +48,10 @@ export class MemoriaCreateComponent implements OnInit {
 
     cancelCreation(): void {
         this.cancel.emit();
-      }
-      createMemoria(): Memoria {
+    }
+    createMemoria(): Memoria {
         let fechaMemoria: Date = new Date(this.memoria.fecha.year, this.memoria.fecha.month - 1, this.memoria.fecha.day);
-        let date = this.dp.transform(fechaMemoria, 'yyyy-MM-ddT00:00:00-05:00');
+
         this.memoria.fecha = fechaMemoria;
 
         console.log(this.memoria);
@@ -68,8 +68,8 @@ export class MemoriaCreateComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.memoria= new Memoria();
-        this.memoria.evento= new Evento();
+        this.memoria = new Memoria();
+        this.memoria.evento = new Evento();
         this.getEventos();
     }
 }

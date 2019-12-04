@@ -2,6 +2,6 @@ export class MedioDePago {
 
     id: number;
 
-    numeroRecibo: String;
+    numeroRecibo: string;
 
 }

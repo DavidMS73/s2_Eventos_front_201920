@@ -45,22 +45,21 @@ export class LugarListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService) {
-      this.lugares=[];
-     }
+    this.lugares = [];
+  }
 
-    
+
   /**
     * Muestra u oculta el componente de crear
     */
   showHideCreate(): void {
     this.showEdit = false;
-    this.showCreate = !this.showCreate!
   }
 
   /**
     * Muestra u oculta el componente de editar
     */
-   showHideEdit(lugar_id: number): void {
+  showHideEdit(lugar_id: number): void {
     if (!this.showEdit || (this.showEdit && lugar_id != this.lugar_edit_id)) {
       this.showCreate = false;
       this.showEdit = true;
@@ -78,32 +77,32 @@ export class LugarListComponent implements OnInit {
     this.showEdit = false;
   }
 
-    /**
-    * Borra un evento
-    */
-   deleteLugar(lugarId): void {
+  /**
+  * Borra un evento
+  */
+  deleteLugar(lugarId): void {
     this.modalDialogService.openDialog(this.viewRef, {
-        title: 'Eliminar un lugar',
-        childComponent: SimpleModalComponent,
-        data: {text: '¿Seguro que desea eliminar el lugar?'},
-        actionButtons: [
-            {
-                text: 'Yes',
-                buttonClass: 'btn btn-danger',
-                onAction: () => {
-                    this.lugarService.deleteLugar(lugarId).subscribe(() => {
-                        this.toastrService.error("El lugar fue eliminado satisfactoriamente", "Lugar eliminado");
-                        this.ngOnInit();
-                    }, err => {
-                        this.toastrService.error(err, "Error");
-                    });
-                    return true;
-                }
-            },
-            {text: 'No', onAction: () => true}
-        ]
+      title: 'Eliminar un lugar',
+      childComponent: SimpleModalComponent,
+      data: { text: '¿Seguro que desea eliminar el lugar?' },
+      actionButtons: [
+        {
+          text: 'Yes',
+          buttonClass: 'btn btn-danger',
+          onAction: () => {
+            this.lugarService.deleteLugar(lugarId).subscribe(() => {
+              this.toastrService.error("El lugar fue eliminado satisfactoriamente", "Lugar eliminado");
+              this.ngOnInit();
+            }, err => {
+              this.toastrService.error(err, "Error");
+            });
+            return true;
+          }
+        },
+        { text: 'No', onAction: () => true }
+      ]
     });
-}
+  }
   /**
   * This will initialize the component by retrieving the list of editorials from the service
   * This method will be called when the component is created

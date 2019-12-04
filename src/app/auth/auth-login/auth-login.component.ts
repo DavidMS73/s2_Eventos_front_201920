@@ -26,11 +26,11 @@ export class AuthLoginComponent implements OnInit {
         private toastrService: ToastrService,
         private router: Router
     ) { }
-    
+
     credencial: Credencial;
     user: UsuarioDetail;
 
-    roles: String[];
+    roles: string[];
 
     /**
     * Logs the user in with the selected role
@@ -38,11 +38,11 @@ export class AuthLoginComponent implements OnInit {
     login(): void {
         this.user = new UsuarioDetail();
         this.authService.getCliente(this.credencial.login)
-        .subscribe(userDet => {
-            this.user = userDet;
-            localStorage.setItem('id', userDet.id.toString());
-            this.toastrService.success('Logged in');
-        })
+            .subscribe(userDet => {
+                this.user = userDet;
+                localStorage.setItem('id', userDet.id.toString());
+                this.toastrService.success('Logged in');
+            })
         this.authService.setRol(this.user.tipo);
         this.router.navigateByUrl('/');
     }

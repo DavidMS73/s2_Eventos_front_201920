@@ -55,13 +55,13 @@ export class EventoListComponent implements OnInit {
 
   getNumEven(): void {
     for (let i = 0; i < this.eventos.length; i++) {
-      var fechaInicio2: String;
-      fechaInicio2 = this.eventos[i].fechaInicio+"";
+      var fechaInicio2: string;
+      fechaInicio2 = this.eventos[i].fechaInicio + "";
       var splitted = fechaInicio2.split("T");
       this.eventos[i].fechaInicio = splitted[0];
 
-      var fechaFin2: String;
-      fechaFin2 = this.eventos[i].fechaFin+"";
+      var fechaFin2: string;
+      fechaFin2 = this.eventos[i].fechaFin + "";
       var splitted2 = fechaFin2.split("T");
       this.eventos[i].fechaFin = splitted2[0];
     }
@@ -72,7 +72,6 @@ export class EventoListComponent implements OnInit {
     */
   showHideCreate(): void {
     this.showEdit = false;
-    this.showCreate = !this.showCreate!
   }
 
   /**
