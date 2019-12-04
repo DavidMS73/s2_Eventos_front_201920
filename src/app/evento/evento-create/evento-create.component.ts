@@ -70,18 +70,19 @@ export class EventoCreateComponent implements OnInit {
   createEvento(): Evento {
     let fechaInicio: Date = new Date(
       this.evento.fechaInicio.year,
-      this.evento.fechaInicio.month-1,
+      this.evento.fechaInicio.month - 1,
       this.evento.fechaInicio.day
     );
     let fechaFin: Date = new Date(
       this.evento.fechaFin.year,
-      this.evento.fechaFin.month-1,
+      this.evento.fechaFin.month - 1,
       this.evento.fechaFin.day
     );
-    
-        
-    let fInicio = this.dp.transform(fechaInicio, "yyyy-MM-ddT00:00:00-05:00");
-    let fFin = this.dp.transform(fechaFin, "yyyy-MM-ddT00:00:00-05:00");
+
+    console.log(fechaInicio);
+    console.log(fechaFin);
+    let fInicio = this.dp.transform(fechaInicio, "yyyy-MM-ddT00:00:00");
+    let fFin = this.dp.transform(fechaFin, "yyyy-MM-ddT00:00:00");
 
     this.evento.fechaInicio = fechaInicio;
     this.evento.fechaFin = fechaFin;
@@ -96,7 +97,7 @@ export class EventoCreateComponent implements OnInit {
       err => {
         this.toastrService.error(err, "Error");
       }
-    ); 
+    );
     return this.evento;
   }
 }

@@ -13,16 +13,6 @@
             </p>
         </div>
         <div class="row">
-            <b style="color:#5bc0be">Fecha inicial:</b>
-            <p style="color:#ffffff"> &nbsp;{{eventoDetail.fechaInicio}}
-            </p>
-        </div>
-        <div class="row">
-            <b style="color:#5bc0be">Fecha fin:</b>
-            <p style="color:#ffffff"> &nbsp;{{eventoDetail.fechaFin}}
-            </p>
-        </div>
-        <div class="row">
             <b style="color:#5bc0be">Detalles adicionales:</b>
             <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
             </p>
@@ -52,41 +42,41 @@
                 </tr>
             </table>
         </div>
-            <div class="row">
-                <h3 style="color:#5bc0be">Usuarios del evento:</h3>
-            </div>
-                <div class="row">
-                    <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#5bc0be">{{usuario.correo}}</h5>
-                            <h6 style="color:#ffffff">{{usuario.nombre}}</h6>
-                        </div>
-                    </div>
-                </div>
-            <div class="row">
-                <h3 style="color:#5bc0be">Memorias del evento:</h3>
-            </div>
-                <div class="row">
-                    <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
-                            <h6 style="color:#000000">{{memoria.fecha}}</h6>
-                        </div>
-                    </div>
-                    
-                </div>
-                <button type="button" class="btn btn-outline-light" 
-                        routerLink="/memorias/add" routerLinkActive="active">Agregar una memoria </button>
-            <div class="row">
-                <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
-            </div>
-                <div class="row">
-                    <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
-                            <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <h3 style="color:#5bc0be">Usuarios del evento:</h3>
         </div>
+        <div class="row">
+            <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:#5bc0be">{{usuario.correo}}</h5>
+                    <h6 style="color:#ffffff">{{usuario.nombre}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3 style="color:#5bc0be">Memorias del evento:</h3>
+        </div>
+        <div class="row">
+            <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
+                    <h6 style="color:#000000">{{memoria.fecha}}</h6>
+                </div>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-outline-light" routerLink="/memorias/add" routerLinkActive="active">Agregar
+            una memoria </button>
+        <div class="row">
+            <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
+        </div>
+        <div class="row">
+            <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
+                    <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

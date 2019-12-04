@@ -43,7 +43,6 @@ export class Evento {
      */
     entradasRestantes: number;
 
-
     /**
      * Valor del evento
      */
@@ -51,5 +50,5 @@ export class Evento {
     /**
      * Imagen del evento
      */
-    imagen :string;
+    imagen: string;
 }  
