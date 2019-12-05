@@ -10,6 +10,6 @@ export class Tarjeta extends MedioDePago{
 
     expiracion: any;
 
-    cw: number;
+    cvv: number;
 
 }

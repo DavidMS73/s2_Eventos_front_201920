@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { MedioDePagoService } from '../medioDePago.service';
 import { TarjetaAddComponent } from './tarjeta-add/tarjeta-add.component';
+import { TarjetaListComponent } from './tarjeta-list/tarjeta-list.component';
+
 
 @NgModule({
     imports: [
@@ -15,8 +17,10 @@ import { TarjetaAddComponent } from './tarjeta-add/tarjeta-add.component';
         FormsModule,
         NgbModule
     ],
-    declarations: [TarjetaAddComponent],
+    declarations: [TarjetaAddComponent,
+                TarjetaListComponent],
     providers: [MedioDePagoService],
-    exports: [TarjetaAddComponent]
+    exports: [TarjetaAddComponent, 
+                TarjetaListComponent]
 })
 export class TarjetaModule { }

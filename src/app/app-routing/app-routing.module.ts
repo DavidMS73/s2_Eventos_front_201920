@@ -90,7 +90,8 @@ const routes: Routes = [
         children: [
             { path: "list", component: UsuarioListComponent },
             { path: "add", component: UsuariosCreateComponent },
-            { path: ":id/tarjetas", component: TarjetaAddComponent}
+            { path: ":id/tarjetas", component: TarjetaAddComponent},
+            { path: ":id/tarjetasList", component: TarjetaListComponent}
         ]
 
     },
