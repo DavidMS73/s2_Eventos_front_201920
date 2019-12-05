@@ -27,13 +27,13 @@ export class EventoListComponent implements OnInit {
     private toastrService: ToastrService) {
     this.eventos = [];
   }
-  
+
 
   /**
     * Lista de eventos a mostrar
     */
   eventos: Evento[];
-  eventoDetail:EventoDetail;
+  eventoDetail: EventoDetail;
   /**
     * Muestra u oculta el componente de crear
     */
@@ -48,77 +48,82 @@ export class EventoListComponent implements OnInit {
    * Id del evento a ser editado
    */
   evento_edit_id: number;
- 
 
-    eventoscard: HTMLElement;
-   borrarEventosLista() {
-   this.eventoscard = document.getElementById("eventos");
-    let bfiltrar: HTMLElement = document.getElementById("botonfiltrar");
+
+  eventoscard: HTMLElement;
+
+  borrarEventosLista() {
+    this.eventoscard = document.getElementById("eventos");
     while (this.eventoscard.hasChildNodes()) {
       this.eventoscard.removeChild(this.eventoscard.lastChild);
     }
   }
+
   /**
     * El método retorna todos los eventos en LesIndestructibles para mostrarlos en la lista
     */
-  getEventos(): void{
-    this.eventoService.getEventos().subscribe(eventos => (this.eventos = eventos) );
+  getEventos(): void {
+    this.eventoService.getEventos().subscribe(eventos => (this.eventos = eventos));
   }
-  filtrarCultural():void {
+
+  filtrarCultural(): void {
     this.borrarEventosLista();
     let eventosFiltrados: Evento[] = this.filtrarPorCultural(this.eventos);
     console.log(eventosFiltrados.length);
-      this.actualizarEventos(eventosFiltrados);
+    this.actualizarEventos(eventosFiltrados);
   }
-  filtrarPorCultural( evs: Evento[] ):  Evento[]{
-    return  evs.filter(e=>e.categoria==="Cultural");
-  
+  filtrarPorCultural(evs: Evento[]): Evento[] {
+    return evs.filter(e => e.categoria === "Cultural");
+
   }
-  filtrarAcademico():void {
+
+  filtrarAcademico(): void {
     this.borrarEventosLista();
     let eventosFiltrados: Evento[] = this.filtrarPorAcademico(this.eventos);
     console.log(eventosFiltrados.length);
-      this.actualizarEventos(eventosFiltrados);
+    this.actualizarEventos(eventosFiltrados);
   }
-  filtrarPorAcademico( evs: Evento[] ):  Evento[]{
-    return  evs.filter(e=>e.categoria==="Académico");
-  
+
+  filtrarPorAcademico(evs: Evento[]): Evento[] {
+    return evs.filter(e => e.categoria === "Académico");
+
   }
-  filtrarLugar():void {
+
+  filtrarLugar(): void {
     const inputFecha: HTMLElement = document.getElementById("lugarFiltro");
     this.borrarEventosLista();
     //this.eventoDetail= this.eventoService.getEventoDetail(this.evento_edit_id);
     let eventosFiltrados: Evento[] = this.filtrarPorFecha(inputFecha, this.eventos);
     console.log(eventosFiltrados.length);
-      this.actualizarEventos(eventosFiltrados);
+    this.actualizarEventos(eventosFiltrados);
   }
 
-filtrarPorLugar(fechaParametro, evs: Evento[] ):  Evento[]{
-  return fechaParametro === "" ? this.eventos : evs.filter(e=>e.fechaInicio===fechaParametro.value);
+  filtrarPorLugar(fechaParametro, evs: Evento[]): Evento[] {
+    return fechaParametro === "" ? this.eventos : evs.filter(e => e.fechaInicio === fechaParametro.value);
 
-}
-  filtrarFecha():void {
-    const inputFecha: HTMLElement = document.getElementById("eventoFecha");
+  }
+  filtrarFecha(): void {
+    const inputDate: HTMLElement = document.getElementById("eventoFecha");
     this.borrarEventosLista();
-    let eventosFiltrados: Evento[] = this.filtrarPorFecha(inputFecha, this.eventos);
+    let eventosFiltrados: Evento[] = this.filtrarPorFecha(inputDate, this.eventos);
     console.log(eventosFiltrados.length);
-      this.actualizarEventos(eventosFiltrados);
+    this.actualizarEventos(eventosFiltrados);
   }
 
-filtrarPorFecha(fechaParametro, evs: Evento[] ):  Evento[]{
-  return fechaParametro === "" ? this.eventos : evs.filter(e=>e.fechaInicio===fechaParametro.value);
+  filtrarPorFecha(fechaParametro, evs: Evento[]): Evento[] {
+    return fechaParametro === "" ? this.eventos : evs.filter(e => e.fechaInicio === fechaParametro.value);
 
-}
- actualizarEventos(even: Evento[]): void {
-  even.forEach(e => {
-    let trElement = document.createElement("tr");
-    trElement.innerHTML = `<td  > <b style="color:#6FFFE9;">Nombre del evento:</b><p style="color:#FFFF;">  ${e.nombre}</p></td>&nbsp;&nbsp;&nbsp
+  }
+  actualizarEventos(even: Evento[]): void {
+    even.forEach(e => {
+      let trElement = document.createElement("tr");
+      trElement.innerHTML = `<td  > <b style="color:#6FFFE9;">Nombre del evento:</b><p style="color:#FFFF;">  ${e.nombre}</p></td>&nbsp;&nbsp;&nbsp
                            <td  > <b style="color:#6FFFE9;">Valor del evento:</b><p style="color:#FFFF;;"> ${e.valor}</p></td>&nbsp;&nbsp;&nbsp
                            <td  ><b style="color:#6FFFE9;"> Cantidad de entradas restantes:</b><p style="color:#FFFF;"> ${e.entradasRestantes}</p></td>`;
-    this.eventoscard.appendChild(trElement);
-  });
-  
-}
+      this.eventoscard.appendChild(trElement);
+    });
+
+  }
   getNumEven(): void {
     for (let i = 0; i < this.eventos.length; i++) {
       var fechaInicio2: string;
