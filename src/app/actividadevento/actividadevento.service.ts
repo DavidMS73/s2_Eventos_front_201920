@@ -19,7 +19,7 @@ export class ActividadEventoService {
     */
   constructor(private http: HttpClient) { }
 
-  getActividades(): Observable<ActividadEvento[]> {
+  getActividadesEvento(): Observable<ActividadEvento[]> {
     return this.http.get<ActividadEvento[]>(API_URL + actividades);
   }
 
@@ -38,6 +38,15 @@ export class ActividadEventoService {
 
       }*/
     );
+  }
+
+  /**
+   * Elimina una actividad de evento
+   * @param actividaDeEventoId Id de la actividad de evento
+   * @returns True if el evento fue eliminado, false en otro caso
+   */
+  deleteActividadEvento(actividadDeEventoId): Observable<ActividadEvento> {
+    return this.http.delete<ActividadEvento>(API_URL + actividades + "/" + actividadDeEventoId);
   }
 
 
