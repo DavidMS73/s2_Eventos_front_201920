@@ -1,0 +1,15 @@
+<div class="row">
+        <div class="col-6 offset-3">
+            <br>
+            <h2 class="text-center" style="color:#6FFFE9;">Registrar tarjeta</h2>
+            <br>
+            <div  class="container-fluid">
+            <form name="sign-up" (ngSubmit)="f.form.valid && createPse()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="tipo" style="color:#6FFFE9;"><b>correo</b></label>
+                    <input type="text" name="tipo" class="form-control" id="correo" [(ngModel)]="pse.correo" required>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>

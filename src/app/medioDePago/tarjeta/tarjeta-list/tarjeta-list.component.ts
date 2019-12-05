@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Tarjeta } from '../tarjeta';
 import { MedioDePagoService } from '../../medioDePago.service';
 import { ToastrService } from 'ngx-toastr';
@@ -12,6 +12,7 @@ import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     templateUrl: './tarjeta-list.component.html',
 })
 export class TarjetaListComponent implements OnInit {
+
     tarjetas: Tarjeta[];
 
     constructor(private mediopagoService: MedioDePagoService,
