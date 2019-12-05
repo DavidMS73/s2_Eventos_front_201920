@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 */
 @Component({
   selector: "list-evento",
-  templateUrl: "./evento-list.component.html"
+  templateUrl: "./evento-list.component.html",
+  styleUrls: ['./evento-list.component.css']
 })
 export class EventoListComponent implements OnInit {
 

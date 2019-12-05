@@ -8,6 +8,8 @@
 <head>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Lobster&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: #0B132B;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,7 +48,7 @@
         <li class="nav-item active">
           <a class="nav-link active" routerLink="medioDePago/list" routerLinkActive="active">Medios de Pago</a>
         </li>
-      -->
+      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -59,6 +61,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
+        -->
       </ul>
       <div *ngxPermissionsOnly="['CLIENTE', 'ORG', 'REP', 'RESP']">
         <div class="btn-group">
@@ -88,7 +91,13 @@
   <div class="container" style="background-color: #1c2541;">
 
     <router-outlet name="login"></router-outlet>
-
+    &nbsp;
+    &nbsp;
+    <h2 style="color:rgb(255, 255, 255)" id="Elh2">
+      L E S &nbsp; &nbsp; I N D E S T R U C T I B L E S
+    </h2>
+    &nbsp;
+    &nbsp;
     <router-outlet>
     </router-outlet>
     <router-outlet name="detail"></router-outlet>

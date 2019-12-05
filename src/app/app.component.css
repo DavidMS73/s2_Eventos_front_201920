@@ -2,4 +2,11 @@ h1 {
     font-family: Lato;
     font-size: 60px;
     font-weight: bold;
-  }
+}
+
+#Elh2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+  color: black;
+}

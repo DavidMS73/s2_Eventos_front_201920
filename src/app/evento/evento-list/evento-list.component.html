@@ -34,32 +34,32 @@
 	</div>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
-				&nbsp; &nbsp;&nbsp;
+			<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
+			&nbsp; &nbsp;&nbsp;
 			<label style="color:#FFFFFF;"><b>Fecha: </b></label>
 			&nbsp;&nbsp;&nbsp;
 			<input type="text" id="eventoFecha" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
 				style="height:40px;width:300px">
 			&nbsp; &nbsp;
-			<button type="button" class="btn btn-outline-light"(click)="filtrarFecha()">Buscar</button>
+			<button type="button" class="btn btn-outline-light" (click)="filtrarFecha()">Buscar</button>
 			&nbsp; &nbsp;&nbsp;
 
 			<b style="color:#FFFFFF;">Lugar: </b>
 			&nbsp; &nbsp;&nbsp;
 			<select class="custom-select" id="lugarFiltro" style="height:40px;width:400px">
 				<option id="nada"> --Selecciona un lugar-- </option>
-				<option id="ML" [value]="ML" > ML </option>
-				<option id="Lleras" [value]="Lleras" > Plaza Lleras </option>
-				<option id="C" [value]="C" > C </option>
-				<option id="W" [value]="W" > W </option>
-				<option id="Aulas" [value]="Aulas" > Aulas </option>
-				<option id="Bobo" [value]="Bobo" > El Bobo </option>
-				<option id="SD" [value]="SD" > SD </option>
-				<option id="Caneca" [value]="Caneca" > La Caneca </option>
+				<option id="ML" [value]="ML"> ML </option>
+				<option id="Lleras" [value]="Lleras"> Plaza Lleras </option>
+				<option id="C" [value]="C"> C </option>
+				<option id="W" [value]="W"> W </option>
+				<option id="Aulas" [value]="Aulas"> Aulas </option>
+				<option id="Bobo" [value]="Bobo"> El Bobo </option>
+				<option id="SD" [value]="SD"> SD </option>
+				<option id="Caneca" [value]="Caneca"> La Caneca </option>
 			</select>
 			&nbsp; &nbsp;&nbsp;
 
-			<button type="button" class="btn btn-outline-light"(click)="filtrarLugar()">Buscar</button>
+			<button type="button" class="btn btn-outline-light" (click)="filtrarLugar()">Buscar</button>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,14 +68,14 @@
 		</nav>
 		<br>
 		<div class="row form-inline justify-content-center align-self-center">
-			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light"
-				style="height:50px;width:400px" (click)="filtrarAcademico()">Académico</button>
+			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light" style="height:50px;width:400px"
+				(click)="filtrarAcademico()">Académico</button>
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
-			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light"
-				style="height:50px;width:400px" (click)="filtrarCultural()">Cultural</button>
+			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light" style="height:50px;width:400px"
+				(click)="filtrarCultural()">Cultural</button>
 		</div>
 	</div>
 	<div class="m-5 row">
@@ -88,11 +88,11 @@
 	</div>
 
 	<div class="row row-cols-1 row-cols-2" id="eventos">
-		<div class="col mb-4" *ngFor="let evento of eventos" >
+		<div class="col mb-4" *ngFor="let evento of eventos">
 			<div class="card h-100">
 				<img src={{evento.imagen}} class="card-img-top" alt="Card image cap" height="250">
 				<div class="card-body" style="background-color:#3A506B;">
-					<h4 class="card-title" style="color:#FAE535 ;">{{evento.nombre}}</h4>
+					<h4 class="card-title" style="color:#FAE535;" id="Elh22">{{evento.nombre}}</h4>
 					<h5 style="color:#FA8F35 ;"> {{getNumEven()}} Fecha de inicio: {{evento.fechaInicio}}</h5>
 					<h5 style="color:#F6816C ;"> {{getNumEven()}} Fecha final: {{evento.fechaFin}}</h5>
 					<h6 class="card-text">
@@ -100,7 +100,12 @@
 							&nbsp;&nbsp;&nbsp; Valor: ${{evento.valor}}</h6>
 						<button class="btn btn-info"
 							[routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
-							evento</button> &nbsp;&nbsp;&nbsp;
+							evento</button>
+						&nbsp;&nbsp;&nbsp;
+						<button class="btn btn-secondary"
+							[routerLink]="['/auth/sign-up']">Inscríbete</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<button class="btn btn-primary" (click)="showHideEdit(evento.id)"><span
 								class="fa fa-pencil"></span></button>
 						&nbsp;&nbsp;&nbsp;
@@ -111,8 +116,8 @@
 			</div>
 		</div>
 	</div>
-		<div *ngIf="showEdit">
-			<app-evento-edit [evento_id]="evento_edit_id" (cancel)="showHideEdit(evento_edit_id)"
-				(update)="updateEvento()"></app-evento-edit>
-		</div>
+	<div *ngIf="showEdit">
+		<app-evento-edit [evento_id]="evento_edit_id" (cancel)="showHideEdit(evento_edit_id)" (update)="updateEvento()">
+		</app-evento-edit>
+	</div>
 </div>
