@@ -10,3 +10,10 @@ h1 {
   font-family: 'Lobster', cursive;
   color: black;
 }
+
+#parr {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+}
