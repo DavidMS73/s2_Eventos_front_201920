@@ -7,6 +7,7 @@ import { Usuario } from '../usuario/usuario';
 import { UsuarioDetail } from '../usuario/usuario-detail';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 
 const API_URL = environment.apiURL;
@@ -24,7 +25,7 @@ export class AuthService {
      * @param roleService NgxRolesService to manage authentication roles
      * @param permissionsService NgxPermissionsService to manage authentication permissions
      */
-    constructor(private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
+    constructor(private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient, private toastr: ToastrService) { }
 
     start(): void {
         localStorage.clear();
@@ -76,6 +77,7 @@ export class AuthService {
         this.roleService.flushRoles();
         this.roleService.addRole('INVITADO', ['']);
         localStorage.clear();
+        this.toastr.success("Se cerró sesión", "Cerrar sesión");
         this.router.navigateByUrl('/');
     }
 }
