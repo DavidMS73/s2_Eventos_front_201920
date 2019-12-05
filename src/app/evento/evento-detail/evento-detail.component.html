@@ -1,41 +1,40 @@
 <body style="background-color: #3A506B;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm">
-                    <h1 style="color:#6fffe9">{{eventoDetail.nombre}}
-                    </h1>
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <h1 style="color:#6fffe9">{{eventoDetail.nombre}}
+                </h1>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <b style="color:#5bc0be">Descripción:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.descripcion}}
-                    </p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <b style="color:#5bc0be">Descripción:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.descripcion}}
+                </p>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <b style="color:#5bc0be">Categoría:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.categoria}}
-                    </p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <b style="color:#5bc0be">Categoría:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.categoria}}
+                </p>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <b style="color:#5bc0be">Detalles adicionales:</b>
-                    <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
-                    </p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <b style="color:#5bc0be">Detalles adicionales:</b>
+                <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
+                </p>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <b style="color:#5bc0be">Valor: </b>
-                    <p style="color:#ffffff">&nbsp;{{eventoDetail.valor}}&nbsp; pesos
-                    </p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <b style="color:#5bc0be">Valor: </b>
+                <p style="color:#ffffff">&nbsp;{{eventoDetail.valor}}&nbsp; pesos
+                </p>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <h3 style="color:#5bc0be">Actividades del evento:</h3>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Actividades del evento:</h3>
             </div>
         </div>
         <div class="row">
@@ -61,44 +60,43 @@
             <div class="col-sm">
                 <h3 style="color:#5bc0be">Memorias del evento:</h3>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
-                            <h6 style="color:#000000">{{memoria.fecha}}</h6>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
+                        <h6 style="color:#000000">{{memoria.fecha}}</h6>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-outline-light" routerLink="/memorias/add"
-                        routerLinkActive="active">Agregar
-                        una memoria </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
-                </div>
-            </div>
-            <div class="row">
-    
-                <div class="col-sm">
-                    <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
-                            <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
-                        </div>
-                    </div>
-                </div>
-    
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-outline-light">Agregar un patrocinio </button>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light" routerLink="/memorias/add"
+                    routerLinkActive="active">Agregar
+                    una memoria </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
+                        <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light">Agregar un patrocinio </button>
+            </div>
+        </div>
+    </div>
+</body>
