@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
     showMap: boolean;
 
     /**
+   * Muestra u oculta el componente de editar
+   */
+    showEstadistics: boolean;
+
+    /**
      * The title that appears on the NavBar and the web browser
      */
     title: string;
@@ -54,14 +59,26 @@ export class AppComponent implements OnInit {
     /**
     * Muestra u oculta el componente del mapa
     */
-  showHideMap(evento_id: number): void {
-    if (!this.showMap) {
-      this.showMap = true;
+    showHideMap(): void {
+        if (!this.showMap) {
+            this.showMap = true;
+        }
+        else {
+            this.showMap = false;
+        }
     }
-    else {
-      this.showMap = false;
+
+    /**
+      * Muestra u oculta el componente de estdísticas
+      */
+    showHideEstad(): void {
+        if (!this.showEstadistics) {
+            this.showEstadistics = true;
+        }
+        else {
+            this.showEstadistics = false;
+        }
     }
-  }
 }
 
 

@@ -57,9 +57,9 @@
             Opciones
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" (click)="showHideMap()">Ver mapa</a>
+            <a class="dropdown-item" (click)="showHideMap()">Ver mapa</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Información</a>
+            <a class="dropdown-item" (click)="showHideEstad()">Información</a>
           </div>
         </li>
       </ul>
@@ -83,17 +83,19 @@
       &nbsp;
       <div *ngxPermissionsOnly="[ 'ORG']">
         <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             Mi cuenta
           </button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetas">Medios de pago</a>
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/pse">Agregar pse</a>
-            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de pago</a>
+            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de
+              pago</a>
             <a class="dropdown-item" href="#" routerLink="actividades/list">Mis actividades evento</a>
             <a class="dropdown-item" href="#" routerLink="actividades/add">Agregar actividad evento</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" (click) = "logout()">Cerrar sesión</a>
+            <a class="dropdown-item" href="#" (click)="logout()">Cerrar sesión</a>
           </div>
         </div>
       </div>
@@ -128,6 +130,10 @@
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1988.4763700819233!2d-74.06443517962342!3d4.60248656381193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1575561134956!5m2!1ses!2sco"
       width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+  </div>
+
+  <div style="text-align: center;" *ngIf="showEstadistics">
+    Aca va la imagen
   </div>
 </body>
 

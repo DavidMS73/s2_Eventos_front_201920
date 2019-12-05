@@ -106,10 +106,10 @@
 							[routerLink]="['/auth/sign-up']">Inscríbete</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button class="btn btn-primary" (click)="showHideEdit(evento.id)"><span
+						<button class="btn btn-primary" (click)="showHideEdit(evento.id)" *ngxPermissionsOnly="['RESP']"><span
 								class="fa fa-pencil"></span></button>
 						&nbsp;&nbsp;&nbsp;
-						<button class="btn btn-danger" (click)="deleteEvento(evento.id)"><span
+						<button class="btn btn-danger" (click)="deleteEvento(evento.id)" *ngxPermissionsOnly="['RESP']"><span
 								class="fa fa-trash"></span></button>
 					</h6>
 				</div>
