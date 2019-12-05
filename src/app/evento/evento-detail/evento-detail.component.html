@@ -1,73 +1,136 @@
 <body style="background-color: #3A506B;">
     <div class="container-fluid">
         <div class="row">
-            <h1 style="color:#6fffe9">{{eventoDetail.nombre}}
-            </h1>
+            <div class="col-sm">
+                <h1 style="color:#6fffe9">{{eventoDetail.nombre}}
+                </h1>
+            </div>
         </div>
         <div class="row">
-            <b style="color:#5bc0be">Descripcion:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.descripcion}}
-            </p>
+            <div class="col-sm">
+                <b style="color:#5bc0be">Descripción:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.descripcion}}
+                </p>
+            </div>
         </div>
         <div class="row">
-            <b style="color:#5bc0be">Categoria:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.categoria}}
-            </p>
+            <div class="col-sm">
+                <b style="color:#5bc0be">Categoría:</b> &nbsp;<p style="color:#ffffff">{{eventoDetail.categoria}}
+                </p>
+            </div>
         </div>
         <div class="row">
-            <b style="color:#5bc0be">Detalles adicionales:</b>
-            <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
-            </p>
+            <div class="col-sm">
+                <b style="color:#5bc0be">Detalles adicionales:</b>
+                <p style="color:#ffffff"> &nbsp;{{eventoDetail.detallesAdicionales}}
+                </p>
+            </div>
         </div>
         <div class="row">
-            <b style="color:#5bc0be">Valor: </b>
-            <p style="color:#ffffff">&nbsp;{{eventoDetail.valor}}&nbsp; pesos
-            </p>
+            <div class="col-sm">
+                <b style="color:#5bc0be">Valor: </b>
+                <p style="color:#ffffff">&nbsp;{{eventoDetail.valor}}&nbsp; pesos
+                </p>
+            </div>
         </div>
         <div class="row">
-            <h3 style="color:#5bc0be">Actividades del evento:</h3>
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Actividades del evento:</h3>
+            </div>
         </div>
         <div class="row">
-            <table class="table" style="color:#5bc0be">
-                <tr>
-                    <th style="color:#5bc0be">Nombre</th>
-                    <th style="color:#5bc0be">Fecha</th>
-                    <th style="color:#5bc0be">Hora inicio</th>
-                    <th style="color:#5bc0be">Hora fin</th>
-                </tr>
-                <tr *ngFor="let actividad of eventoDetail.actividadesEvento" style="color:#ffffff">
-                    <td>{{actividad.nombre}} </td>
-                    <td>{{actividad.fecha}} </td>
-                    <td>{{actividad.horaInicio}} </td>
-                    <td>{{actividad.horaFin}} </td>
+            <div class="col-sm">
+                <table class="table" style="color:#5bc0be">
+                    <tr>
+                        <th style="color:#5bc0be">Nombre</th>
+                        <th style="color:#5bc0be">Fecha</th>
+                        <th style="color:#5bc0be">Hora inicio</th>
+                        <th style="color:#5bc0be">Hora fin</th>
+                    </tr>
+                    <tr *ngFor="let actividad of eventoDetail.actividadesEvento" style="color:#ffffff">
+                        <td>{{actividad.nombre}} </td>
+                        <td>{{actividad.fecha}} </td>
+                        <td>{{actividad.horaInicio}} </td>
+                        <td>{{actividad.horaFin}} </td>
 
-                </tr>
-            </table>
-            <button type="button" class="btn btn-outline-light" routerLink="/actividades/add" routerLinkActive="active">Agregar una actividad </button>
+                    </tr>
+                </table>
+            </div>
+
         </div>
         <div class="row">
+<<<<<<< HEAD
             <h3 style="color:#5bc0be">Memorias del evento:</h3>
+=======
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light" routerLink="/actividades/add"
+                    routerLinkActive="active">Agregar una actividad </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Usuarios del evento:</h3>
+            </div>
         </div>
         <div class="row">
-            <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
-                <div class="card-body">
-                    <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
-                    <h6 style="color:#000000">{{memoria.fecha}}</h6>
+            <div class="col-sm">
+                <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#5bc0be">{{usuario.correo}}</h5>
+                        <h6 style="color:#ffffff">{{usuario.nombre}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light">Agregar un usuario </button>
+            </div>
+>>>>>>> 7421652dbb035779962a2e2ab87244cb8c8c125a
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Memorias del evento:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 17rem;" *ngFor="let memoria of eventoDetail.memorias">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#000000">{{memoria.lugar}}</h5>
+                        <h6 style="color:#000000">{{memoria.fecha}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light" routerLink="/memorias/add"
+                    routerLinkActive="active">Agregar
+                    una memoria </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm">
+                <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
+                        <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
+                    </div>
                 </div>
             </div>
 
         </div>
-        <button type="button" class="btn btn-outline-light" routerLink="/memorias/add" routerLinkActive="active">Agregar
-            una memoria </button>
         <div class="row">
-            <h3 style="color:#5bc0be">Patrocinadores del evento:</h3>
-        </div>
-        <div class="row">
-            <div class="card" style="width: 17rem;" *ngFor="let patrocinio of eventoDetail.patrocinios">
-                <div class="card-body">
-                    <h5 class="card-title" style="color:#ffffff">{{patrocinio.empresa}}</h5>
-                    <h6 style="color:#ffffff">{{patrocinio.tipo}}</h6>
-                </div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-outline-light">Agregar un patrocinio </button>
             </div>
-            <button type="button" class="btn btn-outline-light" >Agregar una patrocinio </button>
         </div>
     </div>
 </body>

@@ -50,7 +50,7 @@ export class EventoEditComponent implements OnInit, OnChanges {
     /**
     * Lista de categorías en LesIndestructibles
     */
-  categorias: string[] = ["Académico", "Cultural"];
+    categorias: string[] = ["Académico", "Cultural"];
 
     /**
     * Retrieves the information of the evento

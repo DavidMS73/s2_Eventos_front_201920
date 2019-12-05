@@ -24,6 +24,7 @@ import { PseListComponent } from '../pse/pse-list/pse-list.component';
 import { TarjetaListComponent } from '../tarjeta/tarjeta-list/tarjeta-list.component';
 import { TarjetaAddComponent } from '../medioDePago/tarjeta/tarjeta-add/tarjeta-add.component';
 import { ActividadEventoCreateComponent } from '../actividadevento/actividadevento-create/actividadevento-create.component';
+import { PseAddComponent } from '../medioDePago/pse/pse-add/pse-add.component';
 const routes: Routes = [
 
     {
@@ -90,7 +91,9 @@ const routes: Routes = [
         children: [
             { path: "list", component: UsuarioListComponent },
             { path: "add", component: UsuariosCreateComponent },
-            { path: ":id/tarjetas", component: TarjetaAddComponent}
+            { path: ":id/tarjetas", component: TarjetaAddComponent},
+            { path: ":id/tarjetasList", component: TarjetaListComponent},
+            { path: ":id/pse", component: PseAddComponent}
         ]
 
     },

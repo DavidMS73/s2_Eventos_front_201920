@@ -158,6 +158,7 @@ filtrarPorFecha(fechaParametro, evs: Evento[] ):  Evento[]{
    */
   updateEvento(): void {
     this.showEdit = false;
+    this.ngOnInit();
   }
 
   /**
