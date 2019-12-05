@@ -1,26 +1,24 @@
 import { Evento } from '../evento/evento'
 
-export class Multimedia
-{
+export class Multimedia {
     /**
      * Representa el id de la multimedia
      */
-    id : number;
+    id: number;
 
     /**
      * Representael url de la multimedia
      */
-    url : string;
+    url: string;
 
     /**
      * Representa el nombre de la multimedia
      */
-    nombre : string;
+    nombre: string;
 
     /**
      * Representa el tipo de la multimedia
      */
-    tipo : string;
+    tipo: string;
 
-  
 }

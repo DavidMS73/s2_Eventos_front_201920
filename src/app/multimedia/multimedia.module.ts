@@ -4,11 +4,11 @@ import { MultimediaListComponent } from './multimedia-list/multimedia-list.compo
 import { MultimediaService } from './multimedia.service';
 
 @NgModule({
-    imports: [
-      CommonModule
-    ],
-    declarations: [MultimediaListComponent],
-    exports: [MultimediaListComponent],
-    providers: [MultimediaService]
-  })
-  export class MultimediaModule { }
+  imports: [
+    CommonModule
+  ],
+  declarations: [MultimediaListComponent],
+  exports: [MultimediaListComponent],
+  providers: [MultimediaService]
+})
+export class MultimediaModule { }

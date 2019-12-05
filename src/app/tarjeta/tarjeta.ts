@@ -11,8 +11,8 @@ export class Tarjeta {
 
     cvv: number;
 
-    numeroRecibo:string;
+    numeroRecibo: string;
 
-    usuario:Usuario;
+    usuario: Usuario;
 
 }

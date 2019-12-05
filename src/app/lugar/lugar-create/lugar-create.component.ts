@@ -21,23 +21,23 @@ export class LugarCreateComponent implements OnInit {
   ) { }
 
 
-  lugar:Lugar;
+  lugar: Lugar;
 
   /**
     * El output el cual indica al componente padre que el
     * usuario no quiere crear el evento definitivamente
     */
-   @Output() cancel = new EventEmitter();
+  @Output() cancel = new EventEmitter();
 
-   /**
-     * El output el cual le avisa al componente padre
-     * que el usuario creó un nuevo evento
-     */
-   @Output() create = new EventEmitter();
+  /**
+    * El output el cual le avisa al componente padre
+    * que el usuario creó un nuevo evento
+    */
+  @Output() create = new EventEmitter();
   cancelCreation(): void {
     this.cancel.emit();
   }
-    ngOnInit() {
-      this.lugar= new Lugar();
-    }
+  ngOnInit() {
+    this.lugar = new Lugar();
+  }
 }

@@ -19,11 +19,11 @@ export class MedioDePagoService {
     return this.http.get<MedioDePago[]>(API_URL + mediosDepago);
   }
 
-  createTarjeta(tarjeta): Observable<Tarjeta>{
+  createTarjeta(tarjeta): Observable<Tarjeta> {
     return this.http.post<Tarjeta>(API_URL + usuarios + '/' + localStorage.getItem('id') + tarjetas, tarjeta);
   }
 
-  getTarjetas(): Observable<Tarjeta[]>{
+  getTarjetas(): Observable<Tarjeta[]> {
     return this.http.get<Tarjeta[]>(API_URL + usuarios + '/' + localStorage.getItem('id') + tarjetas);
   }
 

@@ -27,8 +27,8 @@ export class MemoriaListComponent implements OnInit {
   * @param memoriaService The author's services provider
   */
   constructor(private memoriaService: MemoriaService) {
-    this.memorias=[];
-   }
+    this.memorias = [];
+  }
 
   /**
   * This will initialize the component by retrieving the list of editorials from the service

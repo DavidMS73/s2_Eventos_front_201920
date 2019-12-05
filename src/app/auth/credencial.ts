@@ -1,4 +1,4 @@
 export class Credencial {
-    login:string;
-    password:string;
+    login: string;
+    password: string;
 }

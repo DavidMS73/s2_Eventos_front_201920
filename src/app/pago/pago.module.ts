@@ -6,19 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import {PagoService} from './pago.service';
-import {PagoListComponent} from './pago-list/pago-list.component';
+import { PagoService } from './pago.service';
+import { PagoListComponent } from './pago-list/pago-list.component';
+
 @NgModule({
-    imports: [BrowserModule, 
-      AppRoutingModule,
-      HttpClientModule,
-      CommonModule,
-      FormsModule,
-      NgbModule,
-      ReactiveFormsModule,
-      NgxPermissionsModule],
-    declarations: [PagoListComponent],
-    exports: [PagoListComponent],
-    providers: [PagoService]
-  })
-  export class PagoModule { }
+  imports: [BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    NgxPermissionsModule],
+  declarations: [PagoListComponent],
+  exports: [PagoListComponent],
+  providers: [PagoService]
+})
+export class PagoModule { }

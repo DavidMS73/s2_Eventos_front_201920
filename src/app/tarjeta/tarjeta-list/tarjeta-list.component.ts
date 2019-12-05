@@ -13,9 +13,9 @@ import { TarjetaService } from '../tarjeta.service';
 
 export class TarjetaListComponent implements OnInit {
 
-    constructor(private tarjetaService: TarjetaService ) {
-        this.tarjetas=[];
-     }
+    constructor(private tarjetaService: TarjetaService) {
+        this.tarjetas = [];
+    }
 
     tarjetas: Tarjeta[];
 

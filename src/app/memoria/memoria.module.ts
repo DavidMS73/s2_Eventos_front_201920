@@ -9,7 +9,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { MemoriaListComponent } from './memoria-list/memoria-list.component';
 import { MemoriaService } from './memoria.service';
-import { MemoriaCreateComponent} from './memoria-create/memoria-create.component';
+import { MemoriaCreateComponent } from './memoria-create/memoria-create.component';
 @NgModule({
   imports: [BrowserModule,
     AppRoutingModule,

@@ -3,41 +3,42 @@
         <br>
         <h2 class="text-center" style="color:#6FFFE9;">Regístrate</h2>
         <br>
-        <div  class="container-fluid">
-        <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
-            <div class="form-group">
-                <label for="email" style="color:#6FFFE9;"><b>Correo</b></label>
-                <input type="text" name="email" class="form-control" id="correo" [(ngModel)]="user.correo" required>
-            </div>
-            <div class="form-group">
-                <label for="username" style="color:#6FFFE9;"><b>Username</b></label>
-                <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username" required>
-            </div>
-            <div class="form-group">
-                <label for="password" style="color:#6FFFE9;"><b>Contraseña</b></label>
-                <input type="password" name="pwd" class="form-control" id="contrasena" [(ngModel)]="user.contrasena"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="nombre" style="color:#6FFFE9;"><b>nombre</b></label>
-                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="user.nombre"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="codigoQR" style="color:#6FFFE9;"><b>codigoQR</b></label>
-                <input type="text" name="codigoQR" class="form-control" id="codigoQR" [(ngModel)]="user.codigoQR"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="role" style="color:#6FFFE9;"><b>Tipo de usuario</b></label>
-                <select class="custom-select" name="role" id="role" [(ngModel)]="user.tipo" required>
-                    <option [value]="role" *ngFor="let role of roles">{{role}}</option>
-                </select>
-            </div>
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-info"> Registrar</button>
-            </div>
-        </form>
+        <div class="container-fluid">
+            <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="email" style="color:#6FFFE9;"><b>Correo</b></label>
+                    <input type="text" name="email" class="form-control" id="correo" [(ngModel)]="user.correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="username" style="color:#6FFFE9;"><b>Username</b></label>
+                    <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="password" style="color:#6FFFE9;"><b>Contraseña</b></label>
+                    <input type="password" name="pwd" class="form-control" id="contrasena" [(ngModel)]="user.contrasena"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre" style="color:#6FFFE9;"><b>nombre</b></label>
+                    <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="user.nombre"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="codigoQR" style="color:#6FFFE9;"><b>codigoQR</b></label>
+                    <input type="text" name="codigoQR" class="form-control" id="codigoQR" [(ngModel)]="user.codigoQR"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="role" style="color:#6FFFE9;"><b>Tipo de usuario</b></label>
+                    <select class="custom-select" name="role" id="role" [(ngModel)]="user.tipo" required>
+                        <option [value]="role" *ngFor="let role of roles">{{role}}</option>
+                    </select>
+                </div>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-info"> Registrar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -13,8 +13,7 @@ const API_URL = environment.apiURL;
 const lugares = '/lugares';
 
 @Injectable()
-export class LugarService 
-{
+export class LugarService {
   /**
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
@@ -26,8 +25,9 @@ export class LugarService
   }
 
   createLugar(lugar): Observable<Lugar> {
-    return this.http.post<Lugar>(API_URL + lugares,lugar);
+    return this.http.post<Lugar>(API_URL + lugares, lugar);
   }
+
   /**
    * Actualiza un nuevo lugar
    * @param lugar El lugar actualizado

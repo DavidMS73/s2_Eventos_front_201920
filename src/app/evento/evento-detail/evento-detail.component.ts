@@ -39,18 +39,18 @@ export class EventoDetailComponent implements OnInit {
     });
   }
 
-  loader:any;
+  loader: any;
   /**
     * Id del evento recuperado del path
     */
-  evento_id: number;  
+  evento_id: number;
 
   public isCollapsed = true;
 
   /**
     * El evento cuyos detalles son mostraddos
     */
-   @Input() eventoDetail: EventoDetail;
+  @Input() eventoDetail: EventoDetail;
 
   /**
     * Los otros eventos mostrados en la barra lateral
@@ -112,7 +112,7 @@ export class EventoDetailComponent implements OnInit {
     console.log(" en detail " + this.evento_id);
     this.eventoDetail = new EventoDetail();
     this.getEventoDetail();
-  }   
+  }
   /**
     * Método que inicializa el componente
     * Inicializamos el evento para nunca ser considerados indefinidos

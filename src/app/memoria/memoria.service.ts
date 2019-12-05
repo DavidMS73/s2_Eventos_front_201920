@@ -25,18 +25,18 @@ export class MemoriaService {
 
   createMemoria(memoria): Observable<Memoria> {
     return this.http.post<Memoria>(API_URL + memoria.evento.id.toString() + memorias,
-    memoria  
-    /*{
-        "lugar": "Bogota",
-        "fecha": "2020-09-10T05:00:00Z[UTC]",
-        "evento": {
-          "id": 8,
-          "nombre": "Futbol",
-          "descripcion": "..."
-        },
-        "imagen":"..."
-
-      }*/
+      memoria
+      /*{
+          "lugar": "Bogota",
+          "fecha": "2020-09-10T05:00:00Z[UTC]",
+          "evento": {
+            "id": 8,
+            "nombre": "Futbol",
+            "descripcion": "..."
+          },
+          "imagen":"..."
+  
+        }*/
     );
   }
 

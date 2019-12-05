@@ -1,27 +1,27 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Lugar Capacity</th>
-            <th>Lugar Geographic Location</th>
-            <th>Lugar bloque</th>
-            <th>Lugar piso</th>
-            <th>Lugar salon</th>
-            <th>Lugar name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let e of lugares">
-            <td>{{e.capacidadGeografica}}</td>
-            <td>{{e.ubicacionGeografica}}</td>
-            <td>{{e.bloque}}</td>
-            <td>{{e.piso}}</td>
-            <td>{{e.salon}}</td>
-            <td>{{e.nombre}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <input type="button" value="Add Lugar" (click)="createLugar()">
-    </div>
+  <div class="col-md-2">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Lugar Capacity</th>
+          <th>Lugar Geographic Location</th>
+          <th>Lugar bloque</th>
+          <th>Lugar piso</th>
+          <th>Lugar salon</th>
+          <th>Lugar name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of lugares">
+          <td>{{e.capacidadGeografica}}</td>
+          <td>{{e.ubicacionGeografica}}</td>
+          <td>{{e.bloque}}</td>
+          <td>{{e.piso}}</td>
+          <td>{{e.salon}}</td>
+          <td>{{e.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="button" value="Add Lugar" (click)="createLugar()">
   </div>
+</div>

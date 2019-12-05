@@ -26,7 +26,7 @@ export class HttpErrorInterceptor extends HttpErrorResponse {
                     if (error.error instanceof ErrorEvent) {
                         errMsg = `Error: ${error.error.message}`;
                     }
-                    else {  // Server Side Error                       
+                    else {  // Server Side Error
                         if (error.status == 0) {
                             errMsg = `${error.status}, "No hay conexión con el servidor"`;
                             errorType = 'Major Error';
