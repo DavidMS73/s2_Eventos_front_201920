@@ -87,7 +87,7 @@ export class EventoListComponent implements OnInit {
   filtrarLugar():void {
     const inputFecha: HTMLElement = document.getElementById("lugarFiltro");
     this.borrarEventosLista();
-    this.eventoDetail= this.eventoService.getEventoDetail(this.evento_edit_id);
+    //this.eventoDetail= this.eventoService.getEventoDetail(this.evento_edit_id);
     let eventosFiltrados: Evento[] = this.filtrarPorFecha(inputFecha, this.eventos);
     console.log(eventosFiltrados.length);
       this.actualizarEventos(eventosFiltrados);
