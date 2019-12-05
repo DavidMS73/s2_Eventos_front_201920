@@ -22,8 +22,8 @@ import { LugarModule } from './lugar/lugar.module';
 import { MultimediaModule } from './multimedia/multimedia.module';
 import {PatrocinioModule} from './patrocinio/patrocinio.module';
 import {PagoModule} from './pago/pago.module';
-import {PseModule} from './pse/pse.module';
 import {ActividadEventoModule} from './actividadevento/actividadevento.module';
+import { PseModule } from './pse/pse.module';
 @NgModule({
     declarations: [
         AppComponent

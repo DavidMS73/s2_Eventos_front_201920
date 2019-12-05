@@ -37,57 +37,29 @@
                     <h3 style="color:#5bc0be">Actividades del evento:</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <table class="table" style="color:#5bc0be">
-                        <tr>
-                            <th style="color:#5bc0be">Nombre</th>
-                            <th style="color:#5bc0be">Fecha</th>
-                            <th style="color:#5bc0be">Hora inicio</th>
-                            <th style="color:#5bc0be">Hora fin</th>
-                        </tr>
-                        <tr *ngFor="let actividad of eventoDetail.actividadesEvento" style="color:#ffffff">
-                            <td>{{actividad.nombre}} </td>
-                            <td>{{actividad.fecha}} </td>
-                            <td>{{actividad.horaInicio}} </td>
-                            <td>{{actividad.horaFin}} </td>
-    
-                        </tr>
-                    </table>
-                </div>
-    
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <table class="table" style="color:#5bc0be">
+                    <tr>
+                        <th style="color:#5bc0be">Nombre</th>
+                        <th style="color:#5bc0be">Fecha</th>
+                        <th style="color:#5bc0be">Hora inicio</th>
+                        <th style="color:#5bc0be">Hora fin</th>
+                    </tr>
+                    <tr *ngFor="let actividad of eventoDetail.actividadesEvento" style="color:#ffffff">
+                        <td>{{actividad.nombre}} </td>
+                        <td>{{actividad.fecha}} </td>
+                        <td>{{actividad.horaInicio}} </td>
+                        <td>{{actividad.horaFin}} </td>
+
+                    </tr>
+                </table>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-outline-light" routerLink="/actividades/add"
-                        routerLinkActive="active">Agregar una actividad </button>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-sm">
-                    <h3 style="color:#5bc0be">Usuarios del evento:</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 17rem;" *ngFor="let usuario of eventoDetail.usuarios">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color:#5bc0be">{{usuario.correo}}</h5>
-                            <h6 style="color:#ffffff">{{usuario.nombre}}</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-outline-light">Agregar un usuario </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <h3 style="color:#5bc0be">Memorias del evento:</h3>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color:#5bc0be">Memorias del evento:</h3>
             </div>
             <div class="row">
                 <div class="col-sm">

@@ -10,6 +10,7 @@ export class Usuario {
     codigoQR: string;
     tipo: string;
     username: string;
+    evento:Evento;
 
     
 }

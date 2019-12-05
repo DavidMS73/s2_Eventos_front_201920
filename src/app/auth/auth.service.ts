@@ -28,7 +28,6 @@ export class AuthService {
     constructor(private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient, private toastr: ToastrService) { }
 
     start(): void {
-        localStorage.clear();
         const role = localStorage.getItem('rol');
         this.setRol(role);
     }

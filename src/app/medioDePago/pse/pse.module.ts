@@ -7,20 +7,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { MedioDePagoService } from '../medioDePago.service';
-import { TarjetaAddComponent } from './tarjeta-add/tarjeta-add.component';
-import { TarjetaListComponent } from './tarjeta-list/tarjeta-list.component';
+import { PseAddComponent } from './pse-add/pse-add.component';
 
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        NgbModule
-    ],
-    declarations: [TarjetaAddComponent,
-                TarjetaListComponent],
+        NgbModule ],
+    declarations: [PseAddComponent],
     providers: [MedioDePagoService],
-    exports: [TarjetaAddComponent, 
-                TarjetaListComponent]
+    exports: [PseAddComponent]
+
 })
-export class TarjetaModule { }
+export class PseModule{
+
+}
