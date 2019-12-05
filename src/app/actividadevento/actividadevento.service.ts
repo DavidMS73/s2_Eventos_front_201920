@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActividadEvento } from './actividadevento';
 import { Observable } from 'rxjs';
-import { strictEqual } from 'assert';
 
 //const API_URL = '../../assets/';
 //const memorias = 'memorias.json';
 const API_URL = 'http://localhost:8080/s2_eventos-api/api/eventos/';
 //const evento_id = "1"
-const actividades = 'actividades';
+const actividades = '/actividades';
 
 @Injectable()
 export class ActividadEventoService {
@@ -24,20 +23,8 @@ export class ActividadEventoService {
   }
 
   createActividad(actividad): Observable<ActividadEvento> {
-    return this.http.post<ActividadEvento>(API_URL + actividad.evento.id.toString() +'/'+ actividades,
-    actividad  
-    /*{
-        "lugar": "Bogota",
-        "fecha": "2020-09-10T05:00:00Z[UTC]",
-        "evento": {
-          "id": 8,
-          "nombre": "Futbol",
-          "descripcion": "..."
-        },
-        "imagen":"..."
-
-      }*/
-    );
+    return this.http.post<ActividadEvento>(API_URL + actividad.evento.id.toString() + actividades,
+      actividad);
   }
 
   /**

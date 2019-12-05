@@ -9,15 +9,15 @@ import { ActividadEventoService } from "../actividadevento.service";
 * Component para la lista de eventos en LesIndestructibles
 */
 @Component({
-    selector: "list-actividadevento",
-    templateUrl: "./actividadevento-list.component.html"
-  })
-  export class ActividadEventoListComponent implements OnInit {
+  selector: "list-actividadevento",
+  templateUrl: "./actividadevento-list.component.html"
+})
+export class ActividadEventoListComponent implements OnInit {
 
-    /**
-   * Constructor para el componente
-   * @param actividadeventoService Proveedor de servicios de eventos
-   */
+  /**
+ * Constructor para el componente
+ * @param actividadeventoService Proveedor de servicios de eventos
+ */
   constructor(
     private actividadeventoService: ActividadEventoService,
     private modalDialogService: ModalDialogService,
@@ -29,20 +29,20 @@ import { ActividadEventoService } from "../actividadevento.service";
   /**
     * Lista de actividades de evento a mostrar
     */
-   actividadesevento: ActividadEvento[];
+  actividadesevento: ActividadEvento[];
 
-   /**
-    * El método retorna todos las actividades de evento en LesIndestructibles para mostrarlos en la lista
-    */
+  /**
+   * El método retorna todos las actividades de evento en LesIndestructibles para mostrarlos en la lista
+   */
   getActividadesEvento(): void {
     this.actividadeventoService.getActividadesEvento().subscribe(actividadesevento => (this.actividadesevento = actividadesevento));
   }
 
 
   /**
-    * Borra un evento
+    * Borra una actividad del evento
     */
-   deleteEvento(actividadeventoId): void {
+  deleteActividadEvento(actividadeventoId): void {
     this.modalDialogService.openDialog(this.viewRef, {
       title: 'Eliminar una actividad de evento',
       childComponent: SimpleModalComponent,
@@ -70,5 +70,4 @@ import { ActividadEventoService } from "../actividadevento.service";
     this.getActividadesEvento();
   }
 
-
-  }
+}

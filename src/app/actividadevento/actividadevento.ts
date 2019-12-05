@@ -4,8 +4,8 @@ export class ActividadEvento{
     id: number;
     nombre:string;
     descripcion:string;
-    horaInicio:any;
-    horaFin:any;
+    horaInicio:string;
+    horaFin:string;
     fecha:any;
     evento:Evento;
 }

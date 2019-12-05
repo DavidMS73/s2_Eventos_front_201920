@@ -4,7 +4,7 @@
                 <br>
                 <h2 class="text-center" style="color:#6FFFE9;">Agrega una nueva actividad</h2>
                 <br>
-                <form name="memoria" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
+                <form name="actividad" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
                     <div class="form-group">
                         <label for="actividadNombre" style="color:#6FFFE9;"><b>Nombre</b></label>
                         <input type="text" name="actividadNombre" class="form-control" id="actividadNombre"
@@ -34,7 +34,7 @@
                                 [(ngModel)]="actividad.descripcion" #actividadDescripcion="ngModel"
                                 [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }" required>
                             <div class="invalid-feedback">
-                                <div style="color:#FFFF;">Debe definir el lugar de la actividad</div>
+                                <div style="color:#FFFF;">Debe definir la descripción de la actividad</div>
                             </div>
                     </div>
                     <div class="form-group">
@@ -63,7 +63,7 @@
                                 <option [value]="evento.id" *ngFor="let evento of eventos">{{evento.nombre}}</option>
                             </select>
                             <div class="invalid-feedback">
-                                <div style="color:#FFFF;">The memoria's evento is missing</div>
+                                <div style="color:#FFFF;">The actividadess evento is missing</div>
                             </div>
                     </div>    
                     <br>
