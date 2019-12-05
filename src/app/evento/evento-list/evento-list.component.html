@@ -34,38 +34,46 @@
 	</div>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
-			&nbsp; &nbsp;&nbsp;
-			<label style="color:#FFFFFF;"><b>Fecha: </b></label>
-			&nbsp;&nbsp;&nbsp;
-			<input type="text" id="eventoFecha" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
-				style="height:40px;width:300px">
-			&nbsp; &nbsp;
-			<button type="button" class="btn btn-outline-light" (click)="filtrarFecha()">Buscar</button>
-			&nbsp; &nbsp;&nbsp;
-
-			<b style="color:#FFFFFF;">Lugar: </b>
-			&nbsp; &nbsp;&nbsp;
-			<select class="custom-select" id="lugarFiltro" style="height:40px;width:400px">
-				<option id="nada"> --Selecciona un lugar-- </option>
-				<option id="ML" [value]="ML"> ML </option>
-				<option id="Lleras" [value]="Lleras"> Plaza Lleras </option>
-				<option id="C" [value]="C"> C </option>
-				<option id="W" [value]="W"> W </option>
-				<option id="Aulas" [value]="Aulas"> Aulas </option>
-				<option id="Bobo" [value]="Bobo"> El Bobo </option>
-				<option id="SD" [value]="SD"> SD </option>
-				<option id="Caneca" [value]="Caneca"> La Caneca </option>
-			</select>
-			&nbsp; &nbsp;&nbsp;
-
-			<button type="button" class="btn btn-outline-light" (click)="filtrarLugar()">Buscar</button>
-
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<div class="row">
+				<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				<label style="color:#FFFFFF;"><b>Fecha: </b></label>
+				&nbsp;&nbsp;&nbsp;
+				<input type="text" id="eventoFecha" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
+					style="height:40px;width:300px">
+				&nbsp; &nbsp;
+				<button type="button" class="btn btn-outline-light" (click)="filtrarFecha()">Buscar</button>
+			</div>
 		</nav>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+					&nbsp; &nbsp;&nbsp;
+					&nbsp; &nbsp;&nbsp;
+					&nbsp; &nbsp;&nbsp;
+
+					<b style="color:#FFFFFF;">Monto inferior: </b>
+				&nbsp; &nbsp;&nbsp;
+				<input type="text" id="montoInferior">
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+				&nbsp; &nbsp;&nbsp;
+
+				<b style="color:#FFFFFF;">Monto superior: </b>
+				&nbsp; &nbsp;&nbsp;
+				<input type="text" id="montoSuperior">
+				&nbsp; &nbsp;&nbsp;
+				<button type="button" class="btn btn-outline-light" (click)="filtrarPrecio()">Buscar</button>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</nav>
 		<br>
 		<div class="row form-inline justify-content-center align-self-center">
 			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light" style="height:50px;width:400px"
@@ -102,8 +110,7 @@
 							[routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
 							evento</button>
 						&nbsp;&nbsp;&nbsp;
-						<button class="btn btn-secondary"
-							[routerLink]="['/auth/sign-up']">Inscríbete</button>
+						<button class="btn btn-secondary" [routerLink]="['/auth/sign-up']">Inscríbete</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<button class="btn btn-primary" (click)="showHideEdit(evento.id)"><span

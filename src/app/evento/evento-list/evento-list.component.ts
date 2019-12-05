@@ -115,6 +115,19 @@ export class EventoListComponent implements OnInit {
     return fechaParametro === "" ? this.eventos : evs.filter(e => e.fechaInicio === fechaParametro.value);
 
   }
+  filtrarPrecio(): void {
+    const inputInferior: HTMLElement = document.getElementById("montoInferior");
+    const inputSuperior:HTMLElement=document.getElementById("montoSuperior");
+    this.borrarEventosLista();
+    let eventosFiltrados: Evento[] = this.filtrarPorPrecio(inputInferior, inputSuperior, this.eventos);
+    console.log(eventosFiltrados.length);
+    this.actualizarEventos(eventosFiltrados);
+  }
+
+  filtrarPorPrecio(inferior,superior, evs: Evento[]): Evento[] {
+    return  evs.filter(e => (e.valor > inferior.value && e.valor<superior.value));
+
+  }
   actualizarEventos(even: Evento[]): void {
     even.forEach(e => {
       let trElement = document.createElement("tr");
