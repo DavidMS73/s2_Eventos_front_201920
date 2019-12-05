@@ -11,7 +11,15 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
 
+    /**
+     * id del usuario
+     */
     idUsuario;
+
+    /**
+   * Muestra u oculta el componente de editar
+   */
+    showMap: boolean;
 
     /**
      * The title that appears on the NavBar and the web browser
@@ -42,6 +50,18 @@ export class AppComponent implements OnInit {
     darIdActual(): string {
         return localStorage.getItem("id");
     }
+
+    /**
+    * Muestra u oculta el componente del mapa
+    */
+  showHideMap(evento_id: number): void {
+    if (!this.showMap) {
+      this.showMap = true;
+    }
+    else {
+      this.showMap = false;
+    }
+  }
 }
 
 

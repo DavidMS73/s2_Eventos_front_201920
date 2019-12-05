@@ -7,10 +7,12 @@
 
 <head>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Josefin+Sans|Lobster&display=swap" rel="stylesheet">
 </head>
+
 <body style="background-color: #0B132B;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
@@ -48,44 +50,44 @@
         <li class="nav-item active">
           <a class="nav-link active" routerLink="medioDePago/list" routerLinkActive="active">Medios de Pago</a>
         </li>
-      
+        -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Opciones
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#" (click)="showHideMap()">Ver mapa</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Información</a>
           </div>
         </li>
-        -->
       </ul>
       <div *ngxPermissionsOnly="['CLIENTE', 'ORG', 'REP', 'RESP']">
         <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             Mi cuenta
           </button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetas">Medios de pago</a>
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/pse">Agregar pse</a>
-            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de pago</a>
+            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de
+              pago</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" (click) = "logout()">Cerrar sesión</a>
+            <a class="dropdown-item" href="#" (click)="logout()">Cerrar sesión</a>
           </div>
         </div>
       </div>
       &nbsp; &nbsp;
       &nbsp;
       <div *ngxPermissionsOnly="['INVITADO']">
-        <button type="button" class="btn btn-outline-light"  routerLink="auth/login">Iniciar sesión</button>
+        <button type="button" class="btn btn-outline-light" routerLink="auth/login">Iniciar sesión</button>
         &nbsp; &nbsp;
         &nbsp;
         <button type="button" class="btn btn-outline-light" routerLink="auth/sign-up">Registrarse</button>
       </div>
-      
+
     </div>
   </nav>
   <div class="container" style="background-color: #1c2541;">
@@ -96,21 +98,27 @@
     <h2 style="color:rgb(255, 255, 255)" id="Elh2">
       L E S &nbsp; &nbsp; I N D E S T R U C T I B L E S
     </h2>
-    &nbsp;
+    <p style="color:rgb(255, 255, 255)" id="parr"> "¿Desprogramado? Te ofrecemos los mejores eventos de manera fácil,
+      barata y en un solo sitio" </p>
     &nbsp;
     <router-outlet>
     </router-outlet>
     <router-outlet name="detail"></router-outlet>
+  </div>
 
+  <div style="text-align: center;" *ngIf="showMap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1988.4763700819233!2d-74.06443517962342!3d4.60248656381193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1575561134956!5m2!1ses!2sco"
+      width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </div>
 </body>
 
 <footer class="footer bg-light" id="footer">
   <div class="container">
-      <p class="navbar-text text-center">
-          <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text">©Desarrollo de Sw
-              en Equipos </span>
-          <a routerLink="/eventos">LesIndestructibles </a>
-      </p>
+    <p class="navbar-text text-center">
+      <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text">©Desarrollo de Sw
+        en Equipos </span>
+      <a routerLink="/eventos">LesIndestructibles </a>
+    </p>
   </div>
 </footer>
