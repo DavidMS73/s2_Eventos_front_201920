@@ -92,6 +92,7 @@ export class EventoListComponent implements OnInit {
    */
   updateEvento(): void {
     this.showEdit = false;
+    this.ngOnInit();
   }
 
   /**
