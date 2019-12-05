@@ -80,17 +80,27 @@
 			<router-outlet name="detail"></router-outlet>
 		</div>
 	</div>
-	<div class="card mb-3" style="background-color:#3A506B;" *ngFor="let evento of eventos">
-		<img class="card-img-top" src={{evento.imagen}} alt="Card image cap" width="1800" height="200">
-		<div class="card-body" style="background-color:#3A506B;">
-			<h4 class="card-title" style="color:#6FFFE9 ;">{{evento.nombre}}</h4>
-			<h5 style="color:#5BC0BE ;"> {{getNumEven()}} Fecha de inicio: {{evento.fechaInicio}}</h5>
-			<h5 style="color:#5BC0BE ;"> {{getNumEven()}} Fecha final: {{evento.fechaFin}}</h5>
-			<h6 class="card-text">
-				<h6 style="color:#5BC0BE ;">Entradas restantes: {{evento.entradasRestantes}}</h6>
-				<h6 style="color:#5BC0BE ;">Valor: ${{evento.valor}}</h6>
-				<button class="btn btn-info" [routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
-					evento</button>
-			</h6>
+
+	<div class="row row-cols-1 row-cols-2">
+		<div class="col mb-4" *ngFor="let evento of eventos">
+			<div class="card h-100">
+				<img src={{evento.imagen}} class="card-img-top" alt="Card image cap" height="250">
+				<div class="card-body" style="background-color:#3A506B;">
+					<h4 class="card-title" style="color:#FAE535 ;">{{evento.nombre}}</h4>
+					<h5 style="color:#FA8F35 ;"> {{getNumEven()}} Fecha de inicio: {{evento.fechaInicio}}</h5>
+					<h5 style="color:#F6816C ;"> {{getNumEven()}} Fecha final: {{evento.fechaFin}}</h5>
+					<h6 class="card-text">
+						<h6 style="color:#5BC0BE ;">Entradas restantes: {{evento.entradasRestantes}} &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; Valor: ${{evento.valor}}</h6>
+						<button class="btn btn-info"
+							[routerLink]="['/eventos', { outlets: { 'detail': [evento.id] } }]">Ver
+							evento</button>
+					</h6>
+				</div>
+			</div>
 		</div>
 	</div>
+
+
+
+</div>
