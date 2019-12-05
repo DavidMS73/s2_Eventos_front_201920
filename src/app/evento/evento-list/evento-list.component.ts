@@ -79,7 +79,6 @@ export class EventoListComponent implements OnInit {
     */
   showHideEdit(evento_id: number): void {
     if (!this.showEdit || (this.showEdit && evento_id != this.evento_edit_id)) {
-      this.showCreate = false;
       this.showEdit = true;
       this.evento_edit_id = evento_id;
     }
