@@ -23,6 +23,7 @@ import { MultimediaModule } from './multimedia/multimedia.module';
 import {PatrocinioModule} from './patrocinio/patrocinio.module';
 import {PagoModule} from './pago/pago.module';
 import {ActividadEventoModule} from './actividadevento/actividadevento.module';
+import { PseModule } from './pse/pse.module';
 @NgModule({
     declarations: [
         AppComponent
@@ -53,6 +54,7 @@ import {ActividadEventoModule} from './actividadevento/actividadevento.module';
         MultimediaModule,
         PatrocinioModule,
         PagoModule,
+        PseModule
     ],
     bootstrap: [AppComponent],
     providers: [

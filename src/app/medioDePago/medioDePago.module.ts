@@ -4,12 +4,14 @@ import { FormsModule } from "@angular/forms";
 import { MedioDePagoService } from './medioDePago.service';
 import { MedioDePagoListComponent } from './medioDePago-list/medioDePago-list.component';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
+import { PseModule } from './pse/pse.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    TarjetaModule
+    TarjetaModule,
+    PseModule
   ],
   declarations: [MedioDePagoListComponent],
   providers: [MedioDePagoService],
