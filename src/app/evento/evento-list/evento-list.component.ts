@@ -109,7 +109,7 @@ export class EventoListComponent implements OnInit {
           buttonClass: 'btn btn-danger',
           onAction: () => {
             this.eventoService.deleteEvento(eventoId).subscribe(() => {
-              this.toastrService.error("El evento fue eliminado satisfactoriamente", "Evento eliminado");
+              this.toastrService.success("El evento fue eliminado satisfactoriamente", "Evento eliminado");
               this.ngOnInit();
             }, err => {
               this.toastrService.error(err, "Error");
