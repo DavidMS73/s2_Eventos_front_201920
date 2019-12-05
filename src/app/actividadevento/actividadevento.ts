@@ -5,7 +5,7 @@ export class ActividadEvento{
     nombre:string;
     descripcion:string;
     horaInicio:any;
-    horafin:any;
+    horaFin:any;
     fecha:any;
     evento:Evento;
 }

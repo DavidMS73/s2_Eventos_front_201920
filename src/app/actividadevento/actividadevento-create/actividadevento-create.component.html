@@ -1,0 +1,87 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <h2 class="text-center" style="color:#6FFFE9;">Agrega una nueva actividad</h2>
+                <br>
+                <form name="memoria" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="actividadNombre" style="color:#6FFFE9;"><b>Nombre</b></label>
+                        <input type="text" name="actividadNombre" class="form-control" id="actividadNombre"
+                            [(ngModel)]="actividad.nombre" #actividadNombre="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && actividadNombre.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div style="color:#FFFF;">Debe definir el nombre de la actividad</div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="actividadFecha" style="color:#6FFFE9;"><b>Fecha: </b></label>
+                        <div [ngClass]="{ 'is-invalid': f.submitted && actividadFecha.invalid }">
+                            <input class="form-control" id="actividadFecha" name="actividadFecha"
+                                [(ngModel)]="actividad.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                                #actividadFecha="ngModel"
+                                [ngClass]="{'is-invalid': (actividadFecha.untouched || actividadFecha.invalid) }"
+                                required>
+                            <div class="invalid-feedback">
+                                <div style="color:#FFFF;">Debe definir una fecha de la actividad</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="actividadDescripcion" style="color:#6FFFE9;"><b>Descripción</b></label>
+                            <input type="text" name="actividadDescripcion" class="form-control" id="actividadDescripcion"
+                                [(ngModel)]="actividad.descripcion" #actividadDescripcion="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div style="color:#FFFF;">Debe definir el lugar de la actividad</div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="actividadInicio" style="color:#6FFFE9;"><b>Hora inicial:</b></label>
+                            <input type="text" name="actividadInicio" class="form-control" id="actividadInicio"
+                                [(ngModel)]="actividad.horaInicio" #actividadInicio="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && actividadInicio.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div style="color:#FFFF;">Debe definir la hora inicial de la actividad</div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="actividadFin" style="color:#6FFFE9;"><b>Hora final:</b></label>
+                            <input type="text" name="actividadFin" class="form-control" id="actividadFin"
+                                [(ngModel)]="actividad.horaFin" #actividadFin="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && actividadFin.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div style="color:#FFFF;">Debe definir la hora final de la actividad</div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="actividadEvento" style="color:#6FFFE9;"><b>Evento</b></label>
+                            <select class="custom-select" name="actividadEvento" id="actividadEvento" [(ngModel)]="actividad.evento.id"
+                                #actividadEvento="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadEvento.invalid }"
+                                required>
+                                <option [value]="evento.id" *ngFor="let evento of eventos">{{evento.nombre}}</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <div style="color:#FFFF;">The memoria's evento is missing</div>
+                            </div>
+                    </div>    
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                        
+                    </div>
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="button" class="btn btn-outline-light" 
+                         routerLink="/eventos/list" routerLinkActive="active">Volver a la lista de los eventos </button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>

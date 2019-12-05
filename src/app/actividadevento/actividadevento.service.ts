@@ -8,7 +8,7 @@ import { strictEqual } from 'assert';
 //const memorias = 'memorias.json';
 const API_URL = 'http://localhost:8080/s2_eventos-api/api/eventos/';
 //const evento_id = "1"
-const actividades = /*evento_id + */'/actividadesevento';
+const actividades = 'actividades';
 
 @Injectable()
 export class ActividadEventoService {
@@ -24,7 +24,7 @@ export class ActividadEventoService {
   }
 
   createActividad(actividad): Observable<ActividadEvento> {
-    return this.http.post<ActividadEvento>(API_URL + actividad.evento.id.toString() + actividades,
+    return this.http.post<ActividadEvento>(API_URL + actividad.evento.id.toString() +'/'+ actividades,
     actividad  
     /*{
         "lugar": "Bogota",

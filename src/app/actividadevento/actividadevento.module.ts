@@ -7,9 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
 
-//import { MemoriaListComponent } from './memoria-list/memoria-list.component';
 import {ActividadEventoService } from './actividadevento.service';
-//import { MemoriaCreateComponent} from './memoria-create/memoria-create.component';
+import { ActividadEventoCreateComponent} from './actividadevento-create/actividadevento-create.component';
 @NgModule({
   imports: [BrowserModule,
     AppRoutingModule,
@@ -19,8 +18,7 @@ import {ActividadEventoService } from './actividadevento.service';
     NgbModule,
     ReactiveFormsModule, 
     NgxPermissionsModule],
- // declarations: [MemoriaListComponent, MemoriaCreateComponent],
-  //exports: [MemoriaListComponent],
+  declarations: [ActividadEventoCreateComponent],
   providers: [ActividadEventoService]
-})
+})  
 export class ActividadEventoModule { }
