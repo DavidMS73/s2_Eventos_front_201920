@@ -3,6 +3,9 @@ import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 import {UsuarioService} from '../usuario.service';
 import {Usuario} from '../usuario';
+import {Evento} from '../../evento/evento';
+import { EventoService } from "../../evento/evento.service";
+
 
 @Component({
     selector: 'app-usuarios-create',
@@ -21,6 +24,7 @@ export class UsuariosCreateComponent implements OnInit {
     constructor(
         private dp: DatePipe,
         private usuarioService: UsuarioService,
+        private eventoService: EventoService,
         private toastrService: ToastrService
     ) {}
 
@@ -28,6 +32,17 @@ export class UsuariosCreateComponent implements OnInit {
     * The new author
     */
     usuario: Usuario;
+
+    eventos: Evento[];
+
+    getEventos(): void {
+        this.eventoService.getEventos()
+            .subscribe(eventos => {
+                this.eventos = eventos;
+            }, err => {
+                this.toastrService.error(err, 'Error');
+            });
+    }
 
     /**
     * The output which tells the parent component
@@ -41,11 +56,12 @@ export class UsuariosCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
 
+    
     /**
     * Creates an author
     */
     createUsuario(): Usuario {
-
+        
         this.usuarioService.createUsuario(this.usuario)
             .subscribe((usuario) => {
                 this.usuario = usuario;
@@ -55,7 +71,6 @@ export class UsuariosCreateComponent implements OnInit {
             });
         return this.usuario;
     }
-
     /**
     * Emits the signal to tell the parent component that the
     * user no longer wants to create an user
@@ -69,6 +84,8 @@ export class UsuariosCreateComponent implements OnInit {
     */
     ngOnInit() {
         this.usuario = new Usuario();
+        this.usuario.evento = new Evento();
+        this.getEventos();
     }
 
 }

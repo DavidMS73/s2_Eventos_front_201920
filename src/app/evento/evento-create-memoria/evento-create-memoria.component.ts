@@ -43,10 +43,9 @@ export class EventoCreateMemoriaComponent implements OnInit, OnChanges {
                 this.toastrService.success("Se agrego la memoria de manera exitosa", 'Memoria agregada');
             }, err => {
                 this.toastrService.error(err, 'Error');
-            });
+            }); 
         return this.memoria;
-    }
-
+    } 
     /**
     * The function which notices that the input which defines the bicicleta_id has changed.
     * If the bike has changed, we update the reviews to show

@@ -2,42 +2,61 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Create an author</h2>
+        <h2 class="text-center" style="color:#5bc0be">Agregar un invitado especial</h2>
         <br>
         <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="usuarioName"><b>Nombre</b></label>
+                <label for="usuarioName" style="color:#5bc0be"><b>Nombre</b></label>
                 <input type="text" name="usuarioName" class="form-control" id="usuarioName" [(ngModel)]="usuario.nombre"
                     #authorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioName.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>The author's name is missing</div>
+                    <div>No hay nombre para el invitado</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="usuarioEmpresa"><b>Description</b></label>
-                <input name="usuarioEmpresa" class="form-control" id="usuarioEmpresa" [(ngModel)]="usuario.empresa"
-                    #usuarioEmpresa="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioEmpresa.invalid }"
-                    required>
-                <div class="invalid-feedback">
-                    <div>The author's description is missing</div>
+                    <label for="usuarioUsuario" style="color:#5bc0be"><b>Usuario</b></label>
+                    <input type="text" name="usuarioUsuario" class="form-control" id="usuarioUsuario" [(ngModel)]="usuario.username"
+                        #usuarioUsuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioUsuario.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>No hay usuario para el invitado</div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="usuarioCorreo"><b>Description</b></label>
-                <input name="usuarioCorreo" maxlength=255 class="form-control" id="usuarioCorreo" [(ngModel)]="usuario.correo"
+            <div class="form-group"> 
+                <label for="usuarioCorreo" style="color:#5bc0be"><b>Correo</b></label>
+                <input name="usuarioCorreo" class="form-control" id="usuarioCorreo" [(ngModel)]="usuario.correo"
                     #usuarioCorreo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioCorreo.invalid }"
                     required>
                 <div class="invalid-feedback">
-                    <div>The author's description is missing</div>
+                    <div>No hay correo para el invitado</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="usuarioContrasena"><b>Image</b></label>
-                <input type="text" name="usuarioContrasena" class="form-control" id="usuarioContrasena" [(ngModel)]="usuario.contrasena"
-                    #usuarioContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioContrasena.invalid }" required>
+                <label for="usuarioContrasena" style="color:#5bc0be"><b>Contraseña</b></label>
+                <input name="usuarioContrasena" maxlength=255 class="form-control" id="usuarioContrasena" [(ngModel)]="usuario.contrasena"
+                    #usuarioContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioContrasena.invalid }"
+                    required>
                 <div class="invalid-feedback">
-                    <div>The author's image is missing</div>
+                    <div>No hay correo para el invitado</div>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioCodigo" style="color:#5bc0be"><b>CodigoQR</b></label>
+                <input type="text" name="usuarioCodigo" class="form-control" id="usuarioCodigo" [(ngModel)]="usuario.codigoQR"
+                    #usuarioCodigo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioCodigo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No hay correo para el invitado</div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="usuarioEvento" style="color:#6FFFE9;"><b>Evento</b></label>
+                    <select class="custom-select" name="usuarioEvento" id="usuarioEvento" [(ngModel)]="usuario.evento.id"
+                        #usuarioEvento="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioEvento.invalid }"
+                        required>
+                        <option [value]="evento.id" *ngFor="let evento of eventos">{{evento.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div style="color:#FFFF;">The memoria's evento is missing</div>
+                    </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary"(click)="cancelCreation()">Create</button>
@@ -46,5 +65,4 @@
             </div>
         </form>
     </div>
-    <div class="col-3"></div>
 </div>

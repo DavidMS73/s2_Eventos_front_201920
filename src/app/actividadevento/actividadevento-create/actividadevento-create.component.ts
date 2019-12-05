@@ -50,7 +50,6 @@ export class ActividadEventoCreateComponent implements OnInit {
     }
     createActividad(): ActividadEvento {
         let fechaActividad: Date = new Date(this.actividad.fecha.year, this.actividad.fecha.month - 1, this.actividad.fecha.day);
-
         this.actividad.fecha = fechaActividad;
         
         console.log(this.actividad);
@@ -59,7 +58,7 @@ export class ActividadEventoCreateComponent implements OnInit {
             .subscribe(actividad => {
                 this.actividad.id = actividad.id;
                 this.create.emit();
-                this.toastrService.success("La memoria fue creada", "Creación memoria");
+                this.toastrService.success("La actividad fue creada", "Creación actividad");
             }, err => {
                 this.toastrService.error(err, 'Error');
             });

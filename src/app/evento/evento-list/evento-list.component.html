@@ -34,27 +34,33 @@
 	</div>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
+				<label style="color: #FFFFFF;"> <b>Próximos eventos</b></label>
+				&nbsp; &nbsp;&nbsp;
 			<label style="color:#FFFFFF;"><b>Fecha: </b></label>
 			&nbsp;&nbsp;&nbsp;
-			<input type="text" id="eventoFechaFin" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
+			<input type="text" id="eventoFecha" ngbDatepicker #de="ngbDatepicker" (click)="de.toggle()"
 				style="height:40px;width:300px">
 			&nbsp; &nbsp;
+			<button type="button" class="btn btn-outline-light"(click)="filtrarFecha()">Buscar</button>
+			&nbsp; &nbsp;&nbsp;
+
 			<b style="color:#FFFFFF;">Lugar: </b>
 			&nbsp; &nbsp;&nbsp;
 			<select class="custom-select" id="lugarFiltro" style="height:40px;width:400px">
 				<option id="nada"> --Selecciona un lugar-- </option>
-				<option id="ML"> ML </option>
-				<option id="Lleras"> Plaza Lleras </option>
-				<option id="C"> C </option>
-				<option id="W"> W </option>
-				<option id="Aulas"> Aulas </option>
-				<option id="El Bobo"> El Bobo </option>
-				<option id="SD"> SD </option>
-				<option id="La Caneca"> La Caneca </option>
+				<option id="ML" [value]="ML" > ML </option>
+				<option id="Lleras" [value]="Lleras" > Plaza Lleras </option>
+				<option id="C" [value]="C" > C </option>
+				<option id="W" [value]="W" > W </option>
+				<option id="Aulas" [value]="Aulas" > Aulas </option>
+				<option id="El Bobo" [value]="El Bobo" > El Bobo </option>
+				<option id="SD" [value]="SD" > SD </option>
+				<option id="La Caneca" [value]="La Caneca" > La Caneca </option>
 			</select>
 			&nbsp; &nbsp;&nbsp;
-			<button type="button" class="btn btn-outline-light" routerLink="auth/login">Buscar</button>
+
+			<button type="button" class="btn btn-outline-light"(click)="filtrarLugar()">Buscar</button>
+
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -63,13 +69,13 @@
 		<br>
 		<div class="row form-inline justify-content-center align-self-center">
 			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light"
-				style="height:50px;width:400px">Académico</button>
+				style="height:50px;width:400px" (click)="filtrarAcademico()">Académico</button>
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			<button id="singlebutton" name="singlebutton" class="btn btn-outline-light"
-				style="height:50px;width:400px">Cultural</button>
+				style="height:50px;width:400px" (click)="filtrarCultural()">Cultural</button>
 		</div>
 	</div>
 	<div class="m-5 row">
@@ -81,8 +87,8 @@
 		</div>
 	</div>
 
-	<div class="row row-cols-1 row-cols-2">
-		<div class="col mb-4" *ngFor="let evento of eventos">
+	<div class="row row-cols-1 row-cols-2" id="eventos">
+		<div class="col mb-4" *ngFor="let evento of eventos" >
 			<div class="card h-100">
 				<img src={{evento.imagen}} class="card-img-top" alt="Card image cap" height="250">
 				<div class="card-body" style="background-color:#3A506B;">
