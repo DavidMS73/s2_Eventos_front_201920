@@ -63,7 +63,7 @@
         </li>
         -->
       </ul>
-      <div *ngxPermissionsOnly="['CLIENTE', 'ORG', 'REP', 'RESP']">
+      <div *ngxPermissionsOnly="['CLIENTE', 'REP', 'RESP']">
         <div class="btn-group">
           <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Mi cuenta
@@ -72,6 +72,24 @@
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetas">Medios de pago</a>
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/pse">Agregar pse</a>
             <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de pago</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" (click) = "logout()">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+      &nbsp; &nbsp;
+      &nbsp;
+      <div *ngxPermissionsOnly="[ 'ORG']">
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mi cuenta
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetas">Medios de pago</a>
+            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/pse">Agregar pse</a>
+            <a class="dropdown-item" href="#" routerLink="usuarios/{{darIdActual()}}/tarjetasList">Mis medios de pago</a>
+            <a class="dropdown-item" href="#" routerLink="actividades/list">Mis actividades evento</a>
+            <a class="dropdown-item" href="#" routerLink="actividades/add">Agregar actividad evento</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" (click) = "logout()">Cerrar sesión</a>
           </div>

@@ -25,6 +25,7 @@ import { TarjetaListComponent } from '../tarjeta/tarjeta-list/tarjeta-list.compo
 import { TarjetaAddComponent } from '../medioDePago/tarjeta/tarjeta-add/tarjeta-add.component';
 import { ActividadEventoCreateComponent } from '../actividadevento/actividadevento-create/actividadevento-create.component';
 import { PseAddComponent } from '../medioDePago/pse/pse-add/pse-add.component';
+import { ActividadEventoListComponent } from '../actividadevento/actividadevento-list/actividadevento-list.component';
 const routes: Routes = [
 
     {
@@ -64,7 +65,9 @@ const routes: Routes = [
     {
         path: 'actividades',
         children: [
-            { path: "add", component: ActividadEventoCreateComponent }]
+            { path: "add", component: ActividadEventoCreateComponent },
+            { path: "list", component: ActividadEventoListComponent }
+        ]
     },
     {
         path: 'medioDePago',
